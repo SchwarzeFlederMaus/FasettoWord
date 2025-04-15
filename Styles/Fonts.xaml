@@ -5,10 +5,10 @@
     <FontFamily x:Key="LatoThin">pack://application;,,,/Fonts/#Lato Thin</FontFamily>
 
     <Style TargetType="{x:Type Control}" x:Key="BaseStyle">
-        <Setter Property="FontFamily" Value="{StaticResource LatoRegular}"/>
+        <Setter Property="FontFamily" Value="{StaticResource LatoThin}"/>
     </Style>
     <Style TargetType="{x:Type TextBlock}" x:Key="BaseTextBlockStyle">
-        <Setter Property="FontFamily" Value="{StaticResource LatoRegular}"/>
+        <Setter Property="FontFamily" Value="{StaticResource LatoThin}"/>
     </Style>
 
     <Style TargetType="{x:Type Button}" BasedOn="{StaticResource BaseStyle}"/>

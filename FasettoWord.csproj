@@ -107,4 +107,8 @@
     </Resource>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Window\" />
+  </ItemGroup>
+
 </Project>
