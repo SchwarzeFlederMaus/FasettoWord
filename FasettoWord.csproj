@@ -28,6 +28,7 @@
     <None Remove="Fonts\Lato-SemiboldItalic.ttf" />
     <None Remove="Fonts\Lato-Thin.ttf" />
     <None Remove="Fonts\Lato-ThinItalic.ttf" />
+    <None Remove="Images\Backgrounds\emoji-background.png" />
     <None Remove="Images\Logo\icon.ico" />
     <None Remove="Images\Logo\logo-small.png" />
     <None Remove="Images\Logo\logo.png" />
@@ -94,6 +95,9 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Fonts\Lato-ThinItalic.ttf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Backgrounds\emoji-background.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\Logo\icon.ico">
