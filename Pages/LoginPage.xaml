@@ -34,17 +34,19 @@
                                        Foreground="{StaticResource WordBlueBrush}"/>
                             <TextBlock Text="It's about to get fun" 
                                        FontSize="{StaticResource FontSizeRegular}"
-                                       Foreground="{StaticResource ForegroundDarkBrush}"/>
+                                       Foreground="{StaticResource ForegroundDarkBrush}"
+                                       Margin="0 0 0 10"/>
                             <!-- Email -->
-                            <TextBox/>
+                            <TextBox Tag="Email"/>
                             <!-- Password -->
-                            <TextBox/>
+                            <TextBox Tag="Password" Margin="0 0 0 30"/>
                             <!-- Next -->
-                            <Button Content="Next"/>
+                            <Button Content="Next" FontFamily="{StaticResource LatoBold}" HorizontalAlignment="Center"/>
                         </StackPanel>
                     </Border>
 
-                    <Button Content="I allready have an account" HorizontalAlignment="Center"/>
+                    <Button Style="{StaticResource TextButton}"
+                        Content="I allready have an account" HorizontalAlignment="Center"/>
                 </StackPanel>
             </ScrollViewer>
         </Grid>
