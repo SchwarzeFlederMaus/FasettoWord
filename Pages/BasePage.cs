@@ -33,25 +33,23 @@ namespace FasettoWord.Pages
             switch (PageLoadAnimation)
             {
                 case PageAnimation.SlideAndFadeInFromRight:
-                    var sb = new Storyboard();
-                    var slideAnimation = new ThicknessAnimation { 
-                        Duration = new Duration(TimeSpan.FromSeconds(SlideSeconds)),
-                        From = new Thickness(WindowWidth, 0, 0, 0),
-                        To = new Thickness(0),
-                        DecelerationRatio = 0.9,
-                    };
-                    Storyboard.SetTargetProperty(slideAnimation, new PropertyPath(MarginProperty));
-                    sb.Children.Add(slideAnimation);
-                    sb.Begin(this);
-
-                    Visibility = Visibility.Visible;
-
-                    await Task.Delay(TimeSpan.FromSeconds(SlideSeconds));
-                    break;
-                default:
-                    break;
+                    await this.SlideAndFadeInFromRight(SlideSeconds); break;
+                default: break;
             }
         }
+
+        public async Task AnimateOut()
+        {
+            if (PageUnloadAnimation == PageAnimation.None) return;
+
+            switch (PageUnloadAnimation)
+            {
+                case PageAnimation.SlideAndFadeOutToLeft:
+                    await this.SlideAndFadeOutToLeft(SlideSeconds); break;
+                default: break;
+            }
+        }
+
 
         #endregion
     }

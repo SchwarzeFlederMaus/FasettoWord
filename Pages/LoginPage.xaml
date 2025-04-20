@@ -36,7 +36,7 @@
                         <!-- Password -->
                         <PasswordBox Tag="Password" Margin="0 0 0 30"/>
                         <!-- Next -->
-                        <Button Content="Next" FontFamily="{StaticResource LatoBold}" HorizontalAlignment="Center"/>
+                        <Button Content="Next" Click="Button_Click" FontFamily="{StaticResource LatoBold}" HorizontalAlignment="Center"/>
                     </StackPanel>
                 </Border>
 
