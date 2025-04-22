@@ -4,7 +4,7 @@ using System.ComponentModel;
 namespace FasettoWord.ViewModel
 {
     [AddINotifyPropertyChangedInterface]
-    class BaseViewModel : INotifyPropertyChanged
+    public class BaseViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged = (s, e) => { };
 
