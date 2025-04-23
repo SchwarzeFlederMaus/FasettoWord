@@ -10,6 +10,7 @@ namespace FasettoWord.ViewModel
         #region Public Properties
         public string Email { get; set; }
         public SecureString Password { get; set; }
+        public bool IsLoginRunning { get; set; }
         #endregion
 
         #region Commands
@@ -23,9 +24,15 @@ namespace FasettoWord.ViewModel
 
         private async Task Login(object parameter)
         {
-            await Task.Delay(500);
+             await RunCommand(() => IsLoginRunning, async () =>
+            {
+                await Task.Delay(5000);
 
-            var pass = ((IHavePassword)parameter).SecurePassword.Unsecure();
+                var email = Email;
+                var pass = ((IHavePassword)parameter).SecurePassword.Unsecure();
+            });
+
+            
         }
     }
 }
