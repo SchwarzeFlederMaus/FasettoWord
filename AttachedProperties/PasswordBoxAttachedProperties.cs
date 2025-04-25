@@ -6,7 +6,7 @@ namespace FasettoWord.AttachedProperties
     /// <summary>
     /// The MonitorPassword attached property for the <see cref="PasswordBox"/>
     /// </summary>
-    public class MonitorPasswordProperty : BaseAttachedProperty<MonitorPasswordProperty, bool>
+    public class MonitorPasswordProperty: BaseAttachedProperty<MonitorPasswordProperty, bool>
     {
         public override void OnValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
@@ -27,7 +27,7 @@ namespace FasettoWord.AttachedProperties
     /// <summary>
     /// The HasText attached property for the <see cref="PasswordBox"/>
     /// </summary>
-    public class HasTextProperty : BaseAttachedProperty<HasTextProperty, bool> 
+    public class HasTextProperty: BaseAttachedProperty<HasTextProperty, bool> 
     { 
         public static void SetValue(PasswordBox passwordBox) => SetValue(passwordBox, passwordBox.SecurePassword.Length > 0);        
     }

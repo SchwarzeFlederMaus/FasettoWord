@@ -2,9 +2,11 @@
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:attachedProperties="clr-namespace:FasettoWord.AttachedProperties"
       xmlns:local="clr-namespace:FasettoWord.Pages"
-      xmlns:viewModel="clr-namespace:FasettoWord.ViewModel"          
+      xmlns:viewModel="clr-namespace:FasettoWord.ViewModel"
+      d:DataContext="{d:DesignInstance Type=viewModel:LoginViewModel}"
       mc:Ignorable="d" 
       x:Name="Page"
       d:DesignHeight="700" d:DesignWidth="700"
@@ -25,7 +27,7 @@
                             Margin="50 50 50 0">
 
                     <StackPanel>
-                        <TextBlock Text="Sign Up"
+                        <TextBlock Text="Sign In"
                                        FontSize="{StaticResource FontSizeLarge}"
                                        FontFamily="{StaticResource LatoRegular}"
                                        Foreground="{StaticResource WordBlueBrush}"/>
@@ -37,10 +39,13 @@
                         <TextBox Text="{Binding Email}" Tag="Email"/>
                         <!-- Password -->
                         <PasswordBox x:Name="PasswordText" Tag="Password" Margin="0 0 0 30"/>
-                        <!-- Next -->
-                        <Button Content="Next" Command="{Binding LoginCommand}" 
+                        <!-- Login Button -->
+                        <Button Content="Login" 
+                                Command="{Binding LoginCommand}"
                                 CommandParameter="{Binding ElementName=Page}" 
-                                FontFamily="{StaticResource LatoBold}" HorizontalAlignment="Center"/>
+                                attachedProperties:IsBusyProperty.Value="{Binding IsLoginRunning}"
+                                FontFamily="{StaticResource LatoBold}" 
+                                HorizontalAlignment="Center"/>
                     </StackPanel>
                 </Border>
 

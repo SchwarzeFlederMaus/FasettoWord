@@ -24,15 +24,15 @@ namespace FasettoWord.ViewModel
 
         private async Task Login(object parameter)
         {
-             await RunCommand(() => IsLoginRunning, async () =>
+            await RunCommand(() => IsLoginRunning, async () =>
             {
-                await Task.Delay(5000);
+                //TODO: Delete delay
+                await Task.Delay(2000);
 
                 var email = Email;
                 var pass = ((IHavePassword)parameter).SecurePassword.Unsecure();
             });
 
-            
         }
     }
 }
