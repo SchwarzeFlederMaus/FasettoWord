@@ -40,8 +40,8 @@ namespace FasettoWord.ViewModel
         #endregion
 
         #region Properties
-        public double WindowMinimunWidth => 400;
-        public double WindowMinimunHeight => 400;
+        public double WindowMinimunWidth => 800;
+        public double WindowMinimunHeight => 500;
         public bool IsBorderless => _window.WindowState == WindowState.Maximized;
         public int ResizeBorder => IsBorderless ? 0 : 6;
         public Thickness ResizeBorderThickness => new(ResizeBorder + OuterMarginSize);
@@ -61,7 +61,7 @@ namespace FasettoWord.ViewModel
         public CornerRadius WindowCornerRadius => new(WindowRadius);
         public int TitleHeight => 42;
         public GridLength TitleHeightGridLength => new(TitleHeight + ResizeBorder);
-        public ApplicationPage CurrentPage { get; set; } = ApplicationPage.Login;
+        public ApplicationPage CurrentPage { get; set; } = ApplicationPage.Chat;
         #endregion
 
         #region Private Helpers

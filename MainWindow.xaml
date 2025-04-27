@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:controls="clr-namespace:FasettoWord.Controls"
         xmlns:local="clr-namespace:FasettoWord"
         xmlns:converters="clr-namespace:FasettoWord.Converters"
         xmlns:viewModel="clr-namespace:FasettoWord.ViewModel" 
@@ -110,10 +111,19 @@
 
     <Border Background="{StaticResource WordBlueBrush}">
         <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
             <Grid.Background>
                 <ImageBrush TileMode="Tile" ViewportUnits="Absolute" Viewport="0 0 500 500" ImageSource="/Images/Backgrounds/emoji-background.png"/>
             </Grid.Background>
-            <Frame x:Name="MainFrame" Content="{Binding CurrentPage, Converter={converters:ApplicationPageValueConverter}}"/>
+            
+            <!--SideMenu-->
+            <controls:SideMenuControl Grid.Column="0"/>
+            <!--MainContent-->
+            <Frame Grid.Column="1" x:Name="MainFrame" Content="{Binding CurrentPage, Converter={converters:ApplicationPageValueConverter}}"/>
         </Grid>
     </Border>
     

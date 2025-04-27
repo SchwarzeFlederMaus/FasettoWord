@@ -119,4 +119,10 @@
     <Folder Include="Window\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="Pages\ChatPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
 </Project>
