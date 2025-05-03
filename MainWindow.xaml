@@ -121,9 +121,14 @@
             </Grid.Background>
             
             <!--SideMenu-->
-            <controls:SideMenuControl Grid.Column="0"/>
+            <controls:SideMenuControl Grid.Column="0">
+                <!--TODO: Need to bind DataContex correct--> 
+                <controls:ChatListControl DataContext="{x:Static viewModel:ChatListDesignModel.Instance}"/> 
+            </controls:SideMenuControl>
             <!--MainContent-->
             <Frame Grid.Column="1" x:Name="MainFrame" Content="{Binding CurrentPage, Converter={converters:ApplicationPageValueConverter}}"/>
+            
+            
         </Grid>
     </Border>
     
