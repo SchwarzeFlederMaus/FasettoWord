@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35825.156
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FasettoWord", "FasettoWord.csproj", "{F93080BE-AA9C-486F-A1BD-4C92548F5191}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FasettoWord", "FassetoWord\FasettoWord.csproj", "{D45D5DC5-2C3E-1E25-47BC-F8610D89A1FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F93080BE-AA9C-486F-A1BD-4C92548F5191}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F93080BE-AA9C-486F-A1BD-4C92548F5191}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F93080BE-AA9C-486F-A1BD-4C92548F5191}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F93080BE-AA9C-486F-A1BD-4C92548F5191}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D45D5DC5-2C3E-1E25-47BC-F8610D89A1FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D45D5DC5-2C3E-1E25-47BC-F8610D89A1FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D45D5DC5-2C3E-1E25-47BC-F8610D89A1FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D45D5DC5-2C3E-1E25-47BC-F8610D89A1FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
