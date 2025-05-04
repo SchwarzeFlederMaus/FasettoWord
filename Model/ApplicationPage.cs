@@ -4,5 +4,6 @@
     {
         Login,
         Chat,
+        Register,
     }
 }

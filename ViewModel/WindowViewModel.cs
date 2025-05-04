@@ -61,7 +61,7 @@ namespace FasettoWord.ViewModel
         public CornerRadius WindowCornerRadius => new(WindowRadius);
         public int TitleHeight => 42;
         public GridLength TitleHeightGridLength => new(TitleHeight + ResizeBorder);
-        public ApplicationPage CurrentPage { get; set; } = ApplicationPage.Chat;
+        public ApplicationPage CurrentPage { get; set; } = ApplicationPage.Login;
         #endregion
 
         #region Private Helpers
