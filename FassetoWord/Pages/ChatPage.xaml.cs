@@ -1,4 +1,4 @@
-﻿using FasettoWord.ViewModel;
+﻿using FasettoWordCore.ViewModels;
 
 namespace FasettoWord.Pages
 {

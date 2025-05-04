@@ -1,8 +1,7 @@
 ﻿using FasettoWord.Animations;
-using FasettoWord.ViewModel;
+using FasettoWordCore.ViewModels;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media.Animation;
 
 namespace FasettoWord.Pages
 {
@@ -42,29 +41,29 @@ namespace FasettoWord.Pages
         #region Animations Load / Unload
         private async void BasePage_Loaded(object sender, RoutedEventArgs e)
         {
-            await AnimateIn();
+            await AnimateInAsync();
         }
 
-        private async Task AnimateIn()
+        private async Task AnimateInAsync()
         {
             if(PageLoadAnimation == PageAnimation.None) return;
 
             switch (PageLoadAnimation)
             {
                 case PageAnimation.SlideAndFadeInFromRight:
-                    await this.SlideAndFadeInFromRight(SlideSeconds); break;
+                    await this.SlideAndFadeInFromRightAsync(SlideSeconds); break;
                 default: break;
             }
         }
 
-        public async Task AnimateOut()
+        public async Task AnimateOutAsync()
         {
             if (PageUnloadAnimation == PageAnimation.None) return;
 
             switch (PageUnloadAnimation)
             {
                 case PageAnimation.SlideAndFadeOutToLeft:
-                    await this.SlideAndFadeOutToLeft(SlideSeconds); break;
+                    await this.SlideAndFadeOutToLeftAsync(SlideSeconds); break;
                 default: break;
             }
         }

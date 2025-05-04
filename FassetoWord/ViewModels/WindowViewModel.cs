@@ -1,4 +1,5 @@
-﻿using FasettoWord.Model;
+﻿using FasettoWordCore.DataModels;
+using FasettoWordCore.ViewModels;
 using System.Windows;
 using System.Windows.Input;
 
@@ -61,7 +62,6 @@ namespace FasettoWord.ViewModel
         public CornerRadius WindowCornerRadius => new(WindowRadius);
         public int TitleHeight => 42;
         public GridLength TitleHeightGridLength => new(TitleHeight + ResizeBorder);
-        public ApplicationPage CurrentPage { get; set; } = ApplicationPage.Login;
         #endregion
 
         #region Private Helpers

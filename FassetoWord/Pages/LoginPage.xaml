@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:attachedProperties="clr-namespace:FasettoWord.AttachedProperties"
       xmlns:local="clr-namespace:FasettoWord.Pages"
-      xmlns:viewModel="clr-namespace:FasettoWord.ViewModel"
+      xmlns:viewModel="clr-namespace:FasettoWordCore.ViewModels;assembly=FasettoWordCore"
       d:DataContext="{d:DesignInstance Type=viewModel:LoginViewModel}"
       mc:Ignorable="d" 
       x:Name="Page"

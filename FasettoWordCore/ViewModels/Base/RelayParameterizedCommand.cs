@@ -1,11 +1,11 @@
 ﻿using System.Windows.Input;
 
-namespace FasettoWord.ViewModel
+namespace FasettoWordCore.ViewModels
 {
-    class RelayCommand : ICommand
+    public class RelayParameterizedCommand : ICommand
     {
-        private Action _execute;
-        public RelayCommand(Action execute)
+        private Action<object> _execute;
+        public RelayParameterizedCommand(Action<object> execute)
         {
             _execute = execute;
         }
@@ -13,7 +13,7 @@ namespace FasettoWord.ViewModel
         public bool CanExecute(object parameter) => true;
         public void Execute(object parameter)
         {
-            _execute();
+            _execute(parameter);
         }
     }
 }

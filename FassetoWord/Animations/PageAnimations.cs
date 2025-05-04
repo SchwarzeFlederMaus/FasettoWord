@@ -6,7 +6,7 @@ namespace FasettoWord.Animations
 {
     public static class PageAnimations
     {
-        public static async Task SlideAndFadeInFromRight(this Page page, double seconds)
+        public static async Task SlideAndFadeInFromRightAsync(this Page page, double seconds)
         {
             var sb = new Storyboard();
             sb.AddSlideFromRight(seconds, page.WindowWidth);
@@ -15,7 +15,7 @@ namespace FasettoWord.Animations
             page.Visibility = Visibility.Visible;
             await Task.Delay(TimeSpan.FromSeconds(seconds));
         }
-        public static async Task SlideAndFadeOutToLeft(this Page page, double seconds)
+        public static async Task SlideAndFadeOutToLeftAsync(this Page page, double seconds)
         {
             var sb = new Storyboard();
             sb.AddSlideToLeft(seconds, page.WindowWidth);

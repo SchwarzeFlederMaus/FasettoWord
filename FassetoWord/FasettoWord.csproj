@@ -120,6 +120,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FasettoWordCore\FasettoWordCore.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Pages\ChatPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>

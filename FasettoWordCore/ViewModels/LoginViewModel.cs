@@ -1,10 +1,9 @@
-﻿using FasettoWord.Security;
-using FasettoWord.ViewModel.Base;
+﻿using FasettoWordCore.DataModels;
+using FasettoWordCore.Security;
 using System.Security;
 using System.Windows.Input;
-using System.Windows;
 
-namespace FasettoWord.ViewModel
+namespace FasettoWordCore.ViewModels
 {
     public class LoginViewModel : BaseViewModel
     {
@@ -27,7 +26,7 @@ namespace FasettoWord.ViewModel
 
         private async Task LoginAsync(object parameter)
         {
-            await RunCommand(() => IsLoginRunning, async () =>
+            await RunCommandAsync(() => IsLoginRunning, async () =>
             {
                 //TODO: Delete delay
                 await Task.Delay(2000);
@@ -39,8 +38,7 @@ namespace FasettoWord.ViewModel
         }
         private async Task RegisterAsync()
         {
-            //TODO: Need to move to register page
-            ((WindowViewModel)((MainWindow)Application.Current.MainWindow).DataContext).CurrentPage = Model.ApplicationPage.Register;
+            IoC.Get<ApplicationViewModel>().CurrentPage = ApplicationPage.Register;
             await Task.Delay(1);
         }
     }

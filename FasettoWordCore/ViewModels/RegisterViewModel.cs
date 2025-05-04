@@ -1,9 +1,8 @@
-﻿using FasettoWord.Security;
-using FasettoWord.ViewModel.Base;
+﻿using FasettoWordCore.Security;
 using System.Security;
 using System.Windows.Input;
 
-namespace FasettoWord.ViewModel
+namespace FasettoWordCore.ViewModels
 {
     public class RegisterViewModel : BaseViewModel
     {
@@ -24,7 +23,7 @@ namespace FasettoWord.ViewModel
 
         private async Task RegisterAsync(object parameter)
         {
-            await RunCommand(() => IsRegisterRunning, async () =>
+            await RunCommandAsync(() => IsRegisterRunning, async () =>
             {
                 //TODO: Delete delay
                 await Task.Delay(2000);

@@ -1,9 +1,9 @@
-﻿using FasettoWord.Expressions;
+﻿using FasettoWordCore.Expressions;
 using PropertyChanged;
 using System.ComponentModel;
 using System.Linq.Expressions;
 
-namespace FasettoWord.ViewModel
+namespace FasettoWordCore.ViewModels
 {
     [AddINotifyPropertyChangedInterface]
     public class BaseViewModel : INotifyPropertyChanged
@@ -25,7 +25,7 @@ namespace FasettoWord.ViewModel
         /// <param name="updatingFlag">The boolean property flag defininig if the command is already running</param>
         /// <param name="func">The action to run if the command is not already running</param>
         /// <returns></returns>
-        protected async Task RunCommand(Expression<Func<bool>> updatingFlag, Func<Task> func)
+        protected async Task RunCommandAsync(Expression<Func<bool>> updatingFlag, Func<Task> func)
         {
             // Check if the flag property is true (meaning the function already running)
             if (updatingFlag.GetPropertyValue())

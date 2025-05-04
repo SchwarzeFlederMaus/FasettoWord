@@ -1,6 +1,6 @@
 ﻿using System.Security;
 
-namespace FasettoWord.ViewModel.Base
+namespace FasettoWordCore.ViewModels
 {
     /// <summary>
     /// An interface for a class that can provide a secure password
