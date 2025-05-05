@@ -6,5 +6,7 @@ namespace FasettoWordCore.ViewModels
     public class ApplicationViewModel : BaseViewModel
     {
         public ApplicationPage CurrentPage { get; set; } = ApplicationPage.Login;
+
+        public bool IsSideMenuVisible { get; set; } = false;
     }
 }

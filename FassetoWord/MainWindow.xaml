@@ -6,6 +6,7 @@
         xmlns:controls="clr-namespace:FasettoWord.Controls"
         xmlns:local="clr-namespace:FasettoWord"
         xmlns:converters="clr-namespace:FasettoWord.Converters"
+        xmlns:attachedProperties="clr-namespace:FasettoWord.AttachedProperties"
         xmlns:viewModel="clr-namespace:FasettoWordCore.ViewModels;assembly=FasettoWordCore"
         mc:Ignorable="d"
         WindowStyle="None"
@@ -23,7 +24,7 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Window}">
                         <!-- Outer border with the dropshadow margin -->
-                        <Border Padding="{Binding OuterMarginSizeThickness}">
+                        <Border Margin="{Binding OuterMarginSizeThickness}">
                             <!-- Main window outline -->
                             <Grid>
                                 <!-- Opacity mask for corners on grid -->
@@ -87,7 +88,7 @@
                                     </Grid>
 
                                     <!-- Page Content -->
-                                    <Border Grid.Row="1" Padding="{Binding InnerContentPaddingThickness}">
+                                    <Border Grid.Row="1" Padding="{Binding InnerContentPaddingThickness}" ClipToBounds="True">
                                         <ContentPresenter Content="{TemplateBinding Content}"/>
                                     </Border>
                                 </Grid>
@@ -111,7 +112,7 @@
     <Border Background="{StaticResource WordBlueBrush}">
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             
@@ -120,7 +121,8 @@
             </Grid.Background>
             
             <!--SideMenu-->
-            <controls:SideMenuControl Grid.Column="0">
+            <controls:SideMenuControl Grid.Column="0" Width="300" 
+                attachedProperties:AnimateSlideInFromLeftProperty.Value="False">
                 <!--TODO: Need to bind DataContex correct--> 
                 <controls:ChatListControl DataContext="{x:Static viewModel:ChatListDesignModel.Instance}"/> 
             </controls:SideMenuControl>

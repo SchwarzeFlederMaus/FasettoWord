@@ -15,6 +15,7 @@ namespace FasettoWord.AttachedProperties
         /// The event that is raised when the attached property changes
         /// </summary>
         public event Action<DependencyObject, DependencyPropertyChangedEventArgs> ValueChanged;
+        public event Action<DependencyObject, object> ValueUpdated;
         #endregion
 
         #region Instance
@@ -35,18 +36,32 @@ namespace FasettoWord.AttachedProperties
                 typeof(BaseAttachedProperty<Parent, Property>),
                 new PropertyMetadata(
                     default(Property),
-                    new PropertyChangedCallback(OnValuePropertyChanged)));
+                    new PropertyChangedCallback(OnValuePropertyChanged),
+                    new CoerceValueCallback(OnValuePropertyUpdated)));
+
 
         /// <summary>
-        /// The callback event whet the <see cref="ValueProperty"/> changes"/>
+        /// The callback event when the <see cref="ValueProperty"/> changes"/>
         /// </summary>
         /// <param name="d">The UI element that hd it's property changed</param>
-        /// <param name="e">The argumentsfor the event</param>
+        /// <param name="e">The arguments for the event</param>
         /// <exception cref="NotImplementedException"></exception>
         private static void OnValuePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             Instance.OnValueChanged(d, e);
             Instance.ValueChanged?.Invoke(d, e);
+        }
+        /// <summary>
+        /// The callback event when the <see cref="ValueProperty"/> is changed, even if it's the same value"/>
+        /// </summary>
+        /// <param name="d">The UI element that hd it's property changed</param>
+        /// <param name="value">value</param>
+        /// <exception cref="NotImplementedException"></exception>
+        private static object OnValuePropertyUpdated(DependencyObject d, object value)
+        {
+            Instance.OnValueUpdated(d, value);
+            Instance.ValueUpdated?.Invoke(d, value);
+            return value;
         }
         /// <summary>
         /// Gets the attached property
@@ -64,6 +79,7 @@ namespace FasettoWord.AttachedProperties
 
         #region Event Methods
         public virtual void OnValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e) { }
+        public virtual void OnValueUpdated(DependencyObject d, object value) { }
         #endregion
     }
 }
