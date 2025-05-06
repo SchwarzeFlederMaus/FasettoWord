@@ -51,7 +51,7 @@ namespace FasettoWord.Pages
             switch (PageLoadAnimation)
             {
                 case PageAnimation.SlideAndFadeInFromRight:
-                    await this.SlideAndFadeInFromRightAsync(SlideSeconds); break;
+                    await this.SlideAndFadeInFromRightAsync(SlideSeconds, WindowWidth); break;
                 default: break;
             }
         }
@@ -63,7 +63,7 @@ namespace FasettoWord.Pages
             switch (PageUnloadAnimation)
             {
                 case PageAnimation.SlideAndFadeOutToLeft:
-                    await this.SlideAndFadeOutToLeftAsync(SlideSeconds); break;
+                    await this.SlideAndFadeOutToLeftAsync(SlideSeconds, WindowWidth); break;
                 default: break;
             }
         }

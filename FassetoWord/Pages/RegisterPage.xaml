@@ -14,7 +14,7 @@
 
     <Grid>
         <!-- Main content scroll -->
-        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+        <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden">
             <StackPanel 
                     VerticalAlignment="Center"
                     HorizontalAlignment="Center"
