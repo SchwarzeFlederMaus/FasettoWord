@@ -14,7 +14,7 @@
     <!--#region TextBox -->
     <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource BaseStyle}">
         <Setter Property="FontFamily" Value="{StaticResource LatoRegular}"/>
-        <Setter Property="FontSize" Value="{StaticResource FontSizeLarge}"/>
+        <Setter Property="FontSize" Value="{StaticResource FontSizeXXLarge}"/>
         <Setter Property="Padding" Value="10"/>
         <Setter Property="Margin" Value="0 5"/>
         <Setter Property="BorderBrush" Value="{StaticResource WordBlueBrush}"/>
@@ -36,6 +36,7 @@
                                    IsHitTestVisible="False"
                                    Text="{TemplateBinding Tag}"
                                    FontFamily="{StaticResource LatoThin}"
+                                   FontSize="{TemplateBinding FontSize}"
                                    Padding="{TemplateBinding Padding}"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
@@ -72,7 +73,7 @@
     <!--#region PasswordBox -->
     <Style TargetType="{x:Type PasswordBox}" BasedOn="{StaticResource BaseStyle}">
         <Setter Property="FontFamily" Value="{StaticResource LatoRegular}"/>
-        <Setter Property="FontSize" Value="{StaticResource FontSizeLarge}"/>
+        <Setter Property="FontSize" Value="{StaticResource FontSizeXXLarge}"/>
         <Setter Property="Padding" Value="10"/>
         <Setter Property="Margin" Value="0 5"/>
         <Setter Property="BorderBrush" Value="{StaticResource WordBlueBrush}"/>
@@ -95,6 +96,7 @@
                                IsHitTestVisible="False"
                                Text="{TemplateBinding Tag}"
                                FontFamily="{StaticResource LatoThin}"
+                               FontSize="{TemplateBinding FontSize}"
                                Padding="{TemplateBinding Padding}"
                                VerticalAlignment="Center"
                                HorizontalAlignment="{TemplateBinding HorizontalAlignment}"

@@ -7,8 +7,7 @@
              xmlns:local="clr-namespace:FasettoWord.Controls"
              xmlns:viewModel="clr-namespace:FasettoWordCore.ViewModels;assembly=FasettoWordCore"
              mc:Ignorable="d"
-             Height="60"
-             d:DesignHeight="60" d:DesignWidth="300">
+             d:DesignWidth="300">
     <UserControl.Resources>
         <Style x:Key="ContentStyle" TargetType="{x:Type ContentControl}">
             <Setter Property="Template">
@@ -29,7 +28,7 @@
                                         Visibility="{Binding NewContentAvailable, Converter={converters:BooleanToVisibilityConverter}}"/>
 
                                 <!-- Profile picture -->
-                                <Border Grid.Column="0" Margin="8"
+                                <Border Grid.Column="0" Margin="8, 15" Height="40"
                                         Background="{Binding ProfilePictureRGB, Converter={converters:StringRGBToBrushConverter}}"
                                         Width="{Binding ActualHeight, RelativeSource={RelativeSource Self}}"
                                         CornerRadius="{Binding ActualHeight, RelativeSource={RelativeSource Self}}">
@@ -37,17 +36,19 @@
                                                VerticalAlignment="Center"
                                                HorizontalAlignment="Center"
                                                Foreground="{StaticResource BackgroundLightBrush}"
-                                               FontSize="{StaticResource FontSizeAverage}"
+                                               FontSize="{StaticResource FontSizeLarge}"
                                                FontFamily="{StaticResource LatoRegular}"/>
                                 </Border>
 
                                 <!-- Main content -->
                                 <StackPanel Grid.Column="1" Margin="0,0,8,0" VerticalAlignment="Center">
                                     <TextBlock Text="{Binding Name}"
+                                               Padding="0,0,0,3"
                                                TextTrimming="CharacterEllipsis"
                                                Foreground="{StaticResource WordBlueBrush}"
                                                FontFamily="{StaticResource LatoRegular}"/>
                                     <TextBlock Text="{Binding LastMessage}"
+                                               Padding="0,3,0,0"
                                                TextTrimming="CharacterEllipsis"
                                                Foreground="{StaticResource ForegroundDarkBrush}"
                                                FontFamily="{StaticResource LatoRegular}"/>
