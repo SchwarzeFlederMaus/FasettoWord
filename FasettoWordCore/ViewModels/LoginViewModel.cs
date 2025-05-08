@@ -29,16 +29,19 @@ namespace FasettoWordCore.ViewModels
             await RunCommandAsync(() => IsLoginRunning, async () =>
             {
                 //TODO: Delete delay
-                await Task.Delay(2000);
+                await Task.Delay(1000);
 
-                var email = Email;
-                var pass = ((IHavePassword)parameter).SecurePassword.Unsecure();
+                //var email = Email;
+                //var pass = ((IHavePassword)parameter).SecurePassword.Unsecure();
+
+                //Go to the chat page
+                IoC.Get<ApplicationViewModel>().GoToPage(ApplicationPage.Chat);
             });
 
         }
         private async Task RegisterAsync()
         {
-            IoC.Get<ApplicationViewModel>().CurrentPage = ApplicationPage.Register;
+            IoC.Get<ApplicationViewModel>().GoToPage(ApplicationPage.Register);
             await Task.Delay(1);
         }
     }

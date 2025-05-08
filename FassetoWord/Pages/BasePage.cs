@@ -5,48 +5,28 @@ using System.Windows.Controls;
 
 namespace FasettoWord.Pages
 {
-    public class BasePage<VM>: Page
-        where VM : BaseViewModel, new()
+    public class BasePage : Page
     {
-        #region Private Fields
-        private VM _viewModel;
-        #endregion
-
-        #region Public Properties
-        public VM ViewModel 
-        { 
-            get => _viewModel;
-            set
-            {
-                if (_viewModel == value) return;
-                _viewModel = value;
-                DataContext = _viewModel;
-            }
-        }
-        public PageAnimation PageLoadAnimation { get; set; } = PageAnimation.SlideAndFadeInFromRight;
-        public PageAnimation PageUnloadAnimation { get; set; } = PageAnimation.SlideAndFadeOutToLeft;
-        public float SlideSeconds { get; set; } = 0.8f;
-        #endregion
-
         public BasePage()
         {
-            if(PageLoadAnimation != PageAnimation.None)
-                Visibility = Visibility.Collapsed;
-
             Loaded += BasePage_Loaded;
-
-            ViewModel = new VM();
         }
 
-        #region Animations Load / Unload
+        public PageAnimation PageLoadAnimation { get; set; } = PageAnimation.SlideAndFadeInFromRight;
+        public PageAnimation PageUnloadAnimation { get; set; } = PageAnimation.SlideAndFadeOutToLeft;
+        public float SlideSeconds { get; set; } = 0.4f;
+        public bool IsAnimatingOut { get; set; }
+
         private async void BasePage_Loaded(object sender, RoutedEventArgs e)
         {
-            await AnimateInAsync();
+            if (IsAnimatingOut) 
+                await AnimateOutAsync();
+            else 
+                await AnimateInAsync();
         }
-
         private async Task AnimateInAsync()
         {
-            if(PageLoadAnimation == PageAnimation.None) return;
+            if (PageLoadAnimation == PageAnimation.None) return;
 
             switch (PageLoadAnimation)
             {
@@ -55,8 +35,7 @@ namespace FasettoWord.Pages
                 default: break;
             }
         }
-
-        public async Task AnimateOutAsync()
+        private async Task AnimateOutAsync()
         {
             if (PageUnloadAnimation == PageAnimation.None) return;
 
@@ -67,8 +46,26 @@ namespace FasettoWord.Pages
                 default: break;
             }
         }
+    }
+    public class BasePage<VM>: BasePage
+        where VM : BaseViewModel, new()
+    {
+        private VM _viewModel;
+       
+        public BasePage() : base() 
+        {
+            ViewModel = new VM();
+        }
 
-
-        #endregion
+        public VM ViewModel
+        {
+            get => _viewModel;
+            set
+            {
+                if (_viewModel == value) return;
+                _viewModel = value;
+                DataContext = _viewModel;
+            }
+        }
     }
 }

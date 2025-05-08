@@ -5,8 +5,15 @@ namespace FasettoWordCore.ViewModels
 {
     public class ApplicationViewModel : BaseViewModel
     {
-        public ApplicationPage CurrentPage { get; set; } = ApplicationPage.Login;
+        public ApplicationPage CurrentPage { get; private set; } = ApplicationPage.Login;
 
         public bool IsSideMenuVisible { get; set; } = false;
+
+        public void GoToPage(ApplicationPage page)
+        {
+            CurrentPage = page;
+            
+            IsSideMenuVisible = page == ApplicationPage.Chat;
+        }
     }
 }

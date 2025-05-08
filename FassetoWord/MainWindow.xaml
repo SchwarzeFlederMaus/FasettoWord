@@ -3,10 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:controls="clr-namespace:FasettoWord.Controls"
-        xmlns:local="clr-namespace:FasettoWord"
         xmlns:converters="clr-namespace:FasettoWord.Converters"
         xmlns:attachedProperties="clr-namespace:FasettoWord.AttachedProperties"
+        xmlns:controls="clr-namespace:FasettoWord.Controls"
+        xmlns:local="clr-namespace:FasettoWord"
         xmlns:viewModel="clr-namespace:FasettoWordCore.ViewModels;assembly=FasettoWordCore"
         mc:Ignorable="d"
         WindowStyle="None"
@@ -122,17 +122,15 @@
             
             <!--SideMenu-->
             <controls:SideMenuControl Grid.Column="0" Width="300" 
-                attachedProperties:AnimateSlideInFromLeftProperty.Value="False">
+                attachedProperties:AnimateSlideInFromLeftProperty.Value="{Binding ApplicationViewModel.IsSideMenuVisible ,Source={x:Static local:ViewModelLocator.Instance}}">
                 <!--TODO: Need to bind DataContex correct--> 
                 <controls:ChatListControl DataContext="{x:Static viewModel:ChatListDesignModel.Instance}"/> 
             </controls:SideMenuControl>
             
             <!--MainContent-->
-            <Frame Grid.Column="1"
+            <controls:PageHost Grid.Column="1"
                    attachedProperties:NoFrameHistory.Value="True"
-                   Content="{Binding ApplicationViewModel.CurrentPage, Source={x:Static local:ViewModelLocator.Instance}, Converter={converters:ApplicationPageValueConverter}}"/>
-
-
+                   CurrentPage="{Binding ApplicationViewModel.CurrentPage, Source={x:Static local:ViewModelLocator.Instance}, Converter={converters:ApplicationPageValueConverter}}"/>
 
         </Grid>
     </Border>

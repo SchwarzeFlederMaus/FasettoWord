@@ -12,6 +12,11 @@
       Title="Chat">
 
     <Grid>
-        
+        <TextBlock Text="Hello, Motherfucker!"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontSize="{StaticResource FontSizeLarge}"
+                   FontFamily="{StaticResource LatoRegular}"
+                   Foreground="{StaticResource WordOrangeBrush}"/>
     </Grid>
 </local:BasePage>

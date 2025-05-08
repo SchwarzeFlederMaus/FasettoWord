@@ -50,6 +50,7 @@
                 </Border>
 
                 <Button Style="{StaticResource TextButton}"
+                        Command="{Binding LoginCommand}"
                         Content="I allready have an account" HorizontalAlignment="Center"/>
             </StackPanel>
         </ScrollViewer>
