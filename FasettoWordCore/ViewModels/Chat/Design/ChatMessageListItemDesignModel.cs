@@ -5,9 +5,11 @@
         public ChatMessageListItemDesignModel()
         {
             Initials = "IP";
-            Name = "UserName";
-            Message = "This is chat message bubble text. How do you think, is it OK?";
+            SenderName = "UserName";
+            Message = "Some message for designTime mode!";
             ProfilePictureRGB = "3099c5";
+            MessageSentTime = DateTimeOffset.UtcNow;
+            IsSentByMe = true;
         }
 
         public static ChatMessageListItemDesignModel Instance => new();
