@@ -35,7 +35,17 @@ namespace FasettoWord.Controls
             oldPageFrame.Content = oldFrameContent;
 
             if (oldFrameContent is BasePage oldPage)
+            {
                 oldPage.IsAnimatingOut = true;
+
+                Task.Delay((int)(oldPage.SlideSeconds * 1000)).ContinueWith(t =>
+                {
+                    Application.Current.Dispatcher.Invoke(() =>
+                    {
+                        oldPageFrame.Content = null;
+                    });
+                });
+            }
 
             newPageFrame.Content = e.NewValue;
         }

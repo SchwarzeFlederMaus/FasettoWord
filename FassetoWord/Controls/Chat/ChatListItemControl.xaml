@@ -59,7 +59,7 @@
                         <!--#endregion-->
                         <ControlTemplate.Triggers>
                             <DataTrigger Binding="{Binding IsSelected}" Value="True">
-                                <Setter TargetName="background" Property="Background" Value="{StaticResource WordVeryLightBlueBrush}"/>
+                                <Setter TargetName="background" Property="Background" Value="{StaticResource WordVeryVeryLightBlueBrush}"/>
                             </DataTrigger>
                             <!--#region Hover effect-->
                             <EventTrigger RoutedEvent="MouseEnter">

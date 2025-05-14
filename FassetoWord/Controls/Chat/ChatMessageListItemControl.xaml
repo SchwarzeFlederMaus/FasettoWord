@@ -82,17 +82,16 @@
                       Data="M0,0 L10,10 L20,0"
                       Fill="{Binding IsSentByMe, Converter={converters:SendByMeToBackgroundConverter}}"/>
                 <!--Time containers-->
-                <StackPanel x:Name="ExtraDetails" Grid.Row="2" Orientation="Horizontal" Opacity="0">
+                <StackPanel x:Name="ExtraDetails" Grid.Row="2" Orientation="Horizontal" Opacity="0"
+                            HorizontalAlignment="{Binding IsSentByMe, Converter={converters:SendByMeToAlignmentConverter}, ConverterParameter=True}">
                     <!--Sent time-->
                     <TextBlock Text="{Binding MessageSentTime, Converter={converters:DateTimeOffsetToTimeConventer}}"
-                               HorizontalAlignment="Right"
                                Foreground="{StaticResource ForegroundLightBrush}"
                                FontFamily="{StaticResource LatoRegular}"
                                FontSize="{StaticResource FontSizeSmall}"
                                Margin="0 0 15 0"/>
                     <!--Read time-->
                     <TextBlock Text="{Binding MessageReadTime, Converter={converters:DateTimeOffsetToReadTimeConventer}}"
-                               HorizontalAlignment="Right"
                                Foreground="{StaticResource WordDarkBlueBrush}"
                                FontFamily="{StaticResource LatoRegular}"
                                FontSize="{StaticResource FontSizeSmall}"/>

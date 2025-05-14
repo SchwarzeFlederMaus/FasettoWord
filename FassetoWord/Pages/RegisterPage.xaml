@@ -28,22 +28,24 @@
 
                     <StackPanel>
                         <TextBlock Text="Sign Up"
-                                       FontSize="{StaticResource FontSizeXXLarge}"
-                                       FontFamily="{StaticResource LatoRegular}"
-                                       Foreground="{StaticResource WordBlueBrush}"/>
+                                   attachedProperties:IsBusyProperty.Value="{Binding IsRegisterRunning}"
+                                   FontSize="{StaticResource FontSizeXXLarge}"
+                                   FontFamily="{StaticResource LatoRegular}"
+                                   Foreground="{StaticResource WordBlueBrush}"/>
                         <TextBlock Text="It's about to get fun" 
-                                       FontSize="{StaticResource FontSizeLarge}"
-                                       Foreground="{StaticResource ForegroundDarkBrush}"
-                                       Margin="0 0 0 10"/>
+                                   FontSize="{StaticResource FontSizeLarge}"
+                                   Foreground="{StaticResource ForegroundDarkBrush}"
+                                   Margin="0 0 0 10"/>
                         <!-- Email -->
                         <TextBox Text="{Binding Email}" Tag="Email"/>
                         <!-- Password -->
                         <PasswordBox x:Name="PasswordText" Tag="Password" Margin="0 0 0 30"/>
                         <!-- Register Button -->
-                        <Button Content="Register" 
+                        <Button Content="Register"
+                                IsDefault="True"
+                                attachedProperties:IsFocusedProperty.Value="True"
                                 Command="{Binding RegisterCommand}"
                                 CommandParameter="{Binding ElementName=Page}" 
-                                attachedProperties:IsBusyProperty.Value="{Binding IsRegisterRunning}"
                                 FontFamily="{StaticResource LatoBold}" 
                                 HorizontalAlignment="Center"/>
                     </StackPanel>

@@ -7,7 +7,9 @@ namespace FasettoWord.Converters
     {
         public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return (bool)value ? HorizontalAlignment.Right : HorizontalAlignment.Left;
+            bool isByMe = (bool)value;
+            bool invert = parameter != null;
+            return (isByMe ^ invert) ? HorizontalAlignment.Right : HorizontalAlignment.Left;
         }
         public override object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
