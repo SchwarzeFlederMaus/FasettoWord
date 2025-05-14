@@ -3,12 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:attachedProperties="clr-namespace:FasettoWord.AttachedProperties"
              xmlns:local="clr-namespace:FasettoWord.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="900" d:DesignWidth="900">
     <Grid>
-        <Frame x:Name="OldFrame" attachedProperties:NoFrameHistory.Value="True"/>
-        <Frame x:Name="NewFrame" attachedProperties:NoFrameHistory.Value="True"/>
+        <ContentControl x:Name="OldFrame"/>
+        <ContentControl x:Name="NewFrame"/>
     </Grid>
 </UserControl>

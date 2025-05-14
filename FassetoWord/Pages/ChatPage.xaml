@@ -8,8 +8,7 @@
       xmlns:local="clr-namespace:FasettoWord.Pages"
       xmlns:viewModel="clr-namespace:FasettoWordCore.ViewModels;assembly=FasettoWordCore"
       mc:Ignorable="d" 
-      x:Name="Page"
-      Title="Chat">
+      x:Name="Page">
 
     <Grid>
         <controls:ChatMessageListControl/>

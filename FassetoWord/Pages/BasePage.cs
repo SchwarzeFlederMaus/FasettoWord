@@ -1,14 +1,17 @@
 ﻿using FasettoWord.Animations;
 using FasettoWordCore.ViewModels;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 
 namespace FasettoWord.Pages
 {
-    public class BasePage : Page
+    public class BasePage : UserControl
     {
         public BasePage()
         {
+            if (DesignerProperties.GetIsInDesignMode(this)) return;
+
             Loaded += BasePage_Loaded;
         }
 
@@ -31,7 +34,7 @@ namespace FasettoWord.Pages
             switch (PageLoadAnimation)
             {
                 case PageAnimation.SlideAndFadeInFromRight:
-                    await this.SlideAndFadeInFromRightAsync(SlideSeconds, WindowWidth); break;
+                    await this.SlideAndFadeInFromRightAsync(SlideSeconds, Width); break;
                 default: break;
             }
         }
@@ -42,7 +45,7 @@ namespace FasettoWord.Pages
             switch (PageUnloadAnimation)
             {
                 case PageAnimation.SlideAndFadeOutToLeft:
-                    await this.SlideAndFadeOutToLeftAsync(SlideSeconds, WindowWidth); break;
+                    await this.SlideAndFadeOutToLeftAsync(SlideSeconds, Width); break;
                 default: break;
             }
         }
