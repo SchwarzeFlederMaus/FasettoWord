@@ -30,7 +30,8 @@
                                    attachedProperties:IsBusyProperty.Value="{Binding IsRegisterRunning}"
                                    FontSize="{StaticResource FontSizeXXLarge}"
                                    FontFamily="{StaticResource LatoRegular}"
-                                   Foreground="{StaticResource WordBlueBrush}"/>
+                                   Foreground="{StaticResource WordBlueBrush}"
+                                   attachedProperties:IsFocusedProperty.Value="True"/>
                         <TextBlock Text="It's about to get fun" 
                                    FontSize="{StaticResource FontSizeLarge}"
                                    Foreground="{StaticResource ForegroundDarkBrush}"
@@ -42,7 +43,7 @@
                         <!-- Register Button -->
                         <Button Content="Register"
                                 IsDefault="True"
-                                attachedProperties:IsFocusedProperty.Value="True"
+                                attachedProperties:IsBusyProperty.Value="{Binding IsRegisterRunning}"
                                 Command="{Binding RegisterCommand}"
                                 CommandParameter="{Binding ElementName=Page}" 
                                 FontFamily="{StaticResource LatoBold}" 

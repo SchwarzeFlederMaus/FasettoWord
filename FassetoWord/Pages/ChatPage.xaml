@@ -7,10 +7,41 @@
       xmlns:attachedProperties="clr-namespace:FasettoWord.AttachedProperties"
       xmlns:local="clr-namespace:FasettoWord.Pages"
       xmlns:viewModel="clr-namespace:FasettoWordCore.ViewModels;assembly=FasettoWordCore"
-      mc:Ignorable="d" 
+      mc:Ignorable="d"
+      d:DesignWidth="500"
       x:Name="Page">
 
     <Grid>
-        <controls:ChatMessageListControl/>
+        <Grid.RowDefinitions>
+            <!--Title bar-->
+            <RowDefinition Height="Auto"/>
+            <!--Chat list-->
+            <RowDefinition Height="*"/>
+            <!--Send TextBox-->
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <!--Title bar-->
+        <Grid Grid.Row="0" Height="50">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="ChatName" 
+                       Grid.Column="0" Grid.ColumnSpan="2" 
+                       Foreground="{StaticResource ForegroundLightBrush}"
+                       FontSize="{StaticResource FontSizeXLarge}"
+                       FontFamily="{StaticResource LatoRegular}"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"/>
+            
+            <StackPanel Orientation="Horizontal" Grid.Column="1">
+                <Button Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeSearchIcon}"/>
+                <Button Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeEllipsisIcon}"/>
+            </StackPanel>
+        </Grid>
+        <!--Chat list-->
+        <controls:ChatMessageListControl Grid.Row="1"/>
     </Grid>
 </local:BasePage>

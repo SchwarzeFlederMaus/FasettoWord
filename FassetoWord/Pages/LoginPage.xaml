@@ -27,13 +27,14 @@
 
                     <StackPanel>
                         <TextBlock Text="Sign In"
-                                       FontSize="{StaticResource FontSizeXXLarge}"
-                                       FontFamily="{StaticResource LatoRegular}"
-                                       Foreground="{StaticResource WordBlueBrush}"/>
+                                   FontSize="{StaticResource FontSizeXXLarge}"
+                                   FontFamily="{StaticResource LatoRegular}"
+                                   Foreground="{StaticResource WordBlueBrush}"
+                                   attachedProperties:IsFocusedProperty.Value="True"/>
                         <TextBlock Text="It's about to get fun" 
-                                       FontSize="{StaticResource FontSizeLarge}"
-                                       Foreground="{StaticResource ForegroundDarkBrush}"
-                                       Margin="0 0 0 10"/>
+                                   FontSize="{StaticResource FontSizeLarge}"
+                                   Foreground="{StaticResource ForegroundDarkBrush}"
+                                   Margin="0 0 0 10"/>
                         <!-- Email -->
                         <TextBox Text="{Binding Email}" Tag="Email"/>
                         <!-- Password -->
@@ -41,10 +42,9 @@
                         <!-- Login Button -->
                         <Button Content="Login"
                                 IsDefault="True"
-                                attachedProperties:IsFocusedProperty.Value="True"
+                                attachedProperties:IsBusyProperty.Value="{Binding IsLoginRunning}"
                                 Command="{Binding LoginCommand}"
                                 CommandParameter="{Binding ElementName=Page}" 
-                                attachedProperties:IsBusyProperty.Value="{Binding IsLoginRunning}"
                                 FontFamily="{StaticResource LatoBold}" 
                                 HorizontalAlignment="Center"/>
                     </StackPanel>
