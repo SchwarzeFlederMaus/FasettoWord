@@ -7,7 +7,6 @@
              xmlns:viewModel="clr-namespace:FasettoWordCore.ViewModels;assembly=FasettoWordCore"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <!--TODO: Need to bind DataContex correct-->
     <Grid DataContext="{x:Static viewModel:ChatMessageListDesignModel.Instance}"
           VerticalAlignment="Bottom">
         <ScrollViewer VerticalScrollBarVisibility="Auto">

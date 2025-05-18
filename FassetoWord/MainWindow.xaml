@@ -124,8 +124,7 @@
             <!--SideMenu-->
             <controls:SideMenuControl Grid.Column="0" Width="300" 
                 attachedProperties:AnimateSlideInFromLeftProperty.Value="{Binding ApplicationViewModel.IsSideMenuVisible ,Source={x:Static local:ViewModelLocator.Instance}}">
-                <!--TODO: Need to bind DataContex correct-->
-                <controls:ChatListControl DataContext="{x:Static viewModel:ChatListDesignModel.Instance}"/>
+                <controls:ChatListControl/>
             </controls:SideMenuControl>
 
             <!--MainContent-->

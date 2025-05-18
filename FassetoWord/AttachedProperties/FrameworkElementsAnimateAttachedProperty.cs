@@ -70,4 +70,27 @@ namespace FasettoWord.AttachedProperties
             //}
         }
     }
+
+    /// <summary>
+    /// Animates a freamework element to slide in from the bottom on show
+    /// and slide out to the left on hide
+    /// </summary>
+    public class AnimateSlideInFromBottomProperty : AnimateBaseProperty<AnimateSlideInFromBottomProperty>
+    {
+        protected override async void DoAnimation(FrameworkElement element, bool value)
+        {
+            var seconds = FirstLoad ? 0 : 0.3f;
+            if (value) await element.SlideAndFadeInFromBottomAsync(seconds);
+            else await element.SlideAndFadeOutToBottomAsync(seconds);
+
+            //Infinite loop to keep the animation going
+            //while (true)
+            //{
+            //    await Task.Delay(TimeSpan.FromSeconds(2));
+            //    await element.SlideAndFadeInFromBottomAsync(1);
+            //    await Task.Delay(TimeSpan.FromSeconds(2));
+            //    await element.SlideAndFadeOutToBottomAsync(1);
+            //}
+        }
+    }
 }

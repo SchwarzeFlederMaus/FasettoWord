@@ -8,8 +8,8 @@
              xmlns:viewModel="clr-namespace:FasettoWordCore.ViewModels;assembly=FasettoWordCore"
              mc:Ignorable="d" 
              d:DesignWidth="300">
-    <Border Padding="5" Background="{StaticResource WordBlueBrush}"
-             d:DataContext="{x:Static viewModel:ChatMessageListItemDesignModel.Instance}">
+    <Border Padding="5"
+            d:DataContext="{x:Static viewModel:ChatMessageListItemDesignModel.Instance}">
         <Grid>
             <!-- Profile picture -->
             <Border VerticalAlignment="Top"

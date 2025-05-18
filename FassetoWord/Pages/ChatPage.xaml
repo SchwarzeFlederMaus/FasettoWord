@@ -4,9 +4,11 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:controls="clr-namespace:FasettoWord.Controls"
+      xmlns:converters="clr-namespace:FasettoWord.Converters"
       xmlns:attachedProperties="clr-namespace:FasettoWord.AttachedProperties"
       xmlns:local="clr-namespace:FasettoWord.Pages"
       xmlns:viewModel="clr-namespace:FasettoWordCore.ViewModels;assembly=FasettoWordCore"
+      d:DataContext="{d:DesignInstance Type=viewModel:ChatMessageListDesignModel}"
       mc:Ignorable="d"
       d:DesignWidth="500"
       x:Name="Page">
@@ -43,6 +45,11 @@
         </Grid>
         <!--Chat list-->
         <controls:ChatMessageListControl Grid.Row="1"/>
+        <!--Attach Popup-->
+        <controls:BubbleContent Grid.Row="1"
+                                VerticalAlignment="Bottom"
+                                attachedProperties:AnimateSlideInFromBottomProperty.Value="{Binding IsAttachmentButtonVisible}"
+                                HorizontalAlignment="Left"/>
         <!--Send TextBox-->
         <Grid Grid.Row="2"
               MinHeight="50"
@@ -63,6 +70,7 @@
                     Style="{StaticResource IconGrowButton}" 
                     Content="{StaticResource FontAwesomePaperclipIcon}"
                     Height="{Binding MinHeight, RelativeSource={RelativeSource AncestorType=Grid}}"
+                    Command="{Binding AttachmentButtonCommand}"
                     VerticalAlignment="Top"
                     Foreground="{StaticResource ForegroundDarkBrush}"/>
             <!--Text Entry Box-->
