@@ -67,6 +67,7 @@
             
             <!--Attach Button-->
             <Button Grid.Column="0"
+                    DataContext="{Binding AttachmentMenu}"
                     Style="{StaticResource IconGrowButton}" 
                     Content="{StaticResource FontAwesomePaperclipIcon}"
                     Height="{Binding MinHeight, RelativeSource={RelativeSource AncestorType=Grid}}"

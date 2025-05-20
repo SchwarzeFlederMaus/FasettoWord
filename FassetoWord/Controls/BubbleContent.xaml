@@ -3,7 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:converters="clr-namespace:FasettoWord.Converters"
              xmlns:local="clr-namespace:FasettoWord.Controls"
+             xmlns:designModel="clr-namespace:FasettoWordCore.ViewModels;assembly=FasettoWordCore"
+             d:DataContext="{x:Static designModel:ChatAttachmentPopupMenuDesignModel.Instance}"
              mc:Ignorable="d">
 
     <Grid>
@@ -16,7 +19,7 @@
         <Border CornerRadius="10"
                 Margin="5 0 0 0"
                 Padding="15"
-                Background="{StaticResource BackgroundLightBrush}">
+                Background="{Binding PopupBackground, Converter={converters:StringRGBToBrushConverter}}">
 
             <Border.Effect>
                 <DropShadowEffect BlurRadius="4" ShadowDepth="2" Color="{StaticResource WordLightBlue}"/>
