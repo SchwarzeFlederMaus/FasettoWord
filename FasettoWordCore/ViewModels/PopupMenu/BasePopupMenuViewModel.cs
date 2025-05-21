@@ -7,7 +7,7 @@ namespace FasettoWordCore.ViewModels
         public BasePopupMenuViewModel()
         {
             PopupBackground = "ffffff";
-            HorizontalAlignment = ElementHorizontalAligment.Left;
+            ArrowAlignment = ElementHorizontalAligment.Left;
         }
 
         #region Properties
@@ -15,7 +15,7 @@ namespace FasettoWordCore.ViewModels
         /// Using string as ARGB color code
         /// </summary>
         public string PopupBackground { get; set; }
-        public ElementHorizontalAligment HorizontalAlignment { get; set; }
+        public ElementHorizontalAligment ArrowAlignment { get; set; }
         #endregion
     }
 }

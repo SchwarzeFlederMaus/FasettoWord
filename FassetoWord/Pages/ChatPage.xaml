@@ -47,8 +47,9 @@
         <controls:ChatMessageListControl Grid.Row="1"/>
         <!--Attach Popup-->
         <controls:BubbleContent Grid.Row="1"
+                                DataContext="{Binding AttachmentMenu}"
                                 VerticalAlignment="Bottom"
-                                attachedProperties:AnimateSlideInFromBottomProperty.Value="{Binding IsAttachmentButtonVisible}"
+                                attachedProperties:AnimateSlideInFromBottomProperty.Value="{Binding ViewModel.IsAttachmentButtonVisible, RelativeSource={RelativeSource AncestorType=local:BasePage}}"
                                 HorizontalAlignment="Left"/>
         <!--Send TextBox-->
         <Grid Grid.Row="2"
@@ -67,7 +68,6 @@
             
             <!--Attach Button-->
             <Button Grid.Column="0"
-                    DataContext="{Binding AttachmentMenu}"
                     Style="{StaticResource IconGrowButton}" 
                     Content="{StaticResource FontAwesomePaperclipIcon}"
                     Height="{Binding MinHeight, RelativeSource={RelativeSource AncestorType=Grid}}"
