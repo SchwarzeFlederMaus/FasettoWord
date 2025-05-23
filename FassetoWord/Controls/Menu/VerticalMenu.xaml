@@ -2,34 +2,55 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:converters="clr-namespace:FasettoWord.Converters"
              xmlns:local="clr-namespace:FasettoWord.Controls"
              xmlns:viewModel="clr-namespace:FasettoWordCore.ViewModels;assembly=FasettoWordCore"
              mc:Ignorable="d">
-    <ItemsControl DataContext="{x:Static viewModel:MenuDesignModel.Instance}"
-                  ItemsSource="{Binding Items}">
+    <ItemsControl d:DataContext="{x:Static viewModel:MenuDesignModel.Instance}"
+                  ItemsSource="{Binding Items}"
+                  Background="{StaticResource ForegroundLightBrush}">
         <ItemsControl.ItemTemplate>
             <DataTemplate>
-                <Border CornerRadius="8">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-
-                        <!--Icon-->
-                        <TextBlock Name="icon" Grid.Column="0"
-                                   Text="{StaticResource FontAwesomeChatIcon}"
-                                   FontFamily="{StaticResource FontAwesome}"
+                <Grid>
+                    <!--Header-->
+                    <Grid Visibility="{Binding Type, Converter={converters:MenuItemTypeVisibilityConverter}, ConverterParameter=Header}">
+                        <!--Header line-->
+                        <Border Height="0.5" Background="{StaticResource ForegroundDarkBrush}" VerticalAlignment="Center"/>
+                        <!--Header Text-->
+                        <TextBlock Text="{Binding Text}"
+                                   FontFamily="{StaticResource LatoRegular}"
+                                   FontSize="{StaticResource FontSizeSmall}"
+                                   Padding="0 5 10 5"
+                                   Background="{StaticResource ForegroundLightBrush}"
                                    Foreground="{StaticResource ForegroundDarkBrush}"
-                                   Padding="5"/>
-                        <!--Text-->
-                        <TextBlock Name="Text" Grid.Column="1"
-                                   Text="{Binding Text}"
-                                   VerticalAlignment="Center"
-                                   Margin="5 0"/>
+                                   HorizontalAlignment="Left"
+                                   VerticalAlignment="Center"/>
                     </Grid>
-                </Border>
+                    
+                    <!--TextAndIcon-->
+                    <Border CornerRadius="8"
+                            Visibility="{Binding Type, Converter={converters:MenuItemTypeVisibilityConverter}, ConverterParameter=TextAndIcon}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!--Icon-->
+                            <TextBlock Name="icon" Grid.Column="0"
+                                       Text="{StaticResource FontAwesomeChatIcon}"
+                                       FontFamily="{StaticResource FontAwesome}"
+                                       Foreground="{StaticResource ForegroundDarkBrush}"
+                                       Padding="5"/>
+                            <!--Text-->
+                            <TextBlock Name="Text" Grid.Column="1"
+                                       Text="{Binding Text}"
+                                       VerticalAlignment="Center"
+                                       Margin="5 0"/>
+                        </Grid>
+                    </Border>
+                </Grid>
             </DataTemplate>
         </ItemsControl.ItemTemplate>
     </ItemsControl>

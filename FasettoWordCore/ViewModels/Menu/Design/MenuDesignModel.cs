@@ -10,17 +10,22 @@ namespace FasettoWordCore.ViewModels
             [
                 new() 
                 {
+                    Text = "Design time header",
                     Type = MenuItemType.Header,
-                    Text = "Attach a file",
                 },
                 new() 
                 {
-                    Text = "From computer",
+                    Text = "Menu Item 1",
                     Icon = IconType.File,
                 },
                 new() 
                 {
-                    Text = "From Pictures",
+                    Text = "Menu Item 2",
+                    Icon = IconType.File,
+                },
+                new()
+                {
+                    Text = "Menu Item with long text",
                     Icon = IconType.File,
                 }
             ]

@@ -26,11 +26,7 @@
             </Border.Effect>
             
             <!-- Message text -->
-            <TextBlock Text="Testus modus"
-                       TextWrapping="Wrap"
-                       FontFamily="{StaticResource LatoRegular}"
-                       Foreground="{StaticResource WordDarkBlueBrush}"
-                       VerticalAlignment="Center"/>
+            <ContentControl Content="{Binding Converter={converters:PopupContentConverter}}"/>
         </Border>
 
         <!-- Chat bubble anchor -->

@@ -2,9 +2,9 @@
 
 namespace FasettoWordCore.ViewModels
 {
-    public class BasePopupMenuViewModel : BaseViewModel
+    public class BasePopupViewModel : BaseViewModel
     {
-        public BasePopupMenuViewModel()
+        public BasePopupViewModel()
         {
             PopupBackground = "ffffff";
             ArrowAlignment = ElementHorizontalAligment.Left;
@@ -16,6 +16,7 @@ namespace FasettoWordCore.ViewModels
         /// </summary>
         public string PopupBackground { get; set; }
         public ElementHorizontalAligment ArrowAlignment { get; set; }
+        public BaseViewModel Content { get; set; }
         #endregion
     }
 }
