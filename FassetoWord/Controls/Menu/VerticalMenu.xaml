@@ -7,6 +7,7 @@
              xmlns:local="clr-namespace:FasettoWord.Controls"
              xmlns:viewModel="clr-namespace:FasettoWordCore.ViewModels;assembly=FasettoWordCore"
              mc:Ignorable="d">
+    
     <ItemsControl d:DataContext="{x:Static viewModel:MenuDesignModel.Instance}"
                   ItemsSource="{Binding Items}"
                   Background="{StaticResource ForegroundLightBrush}">
@@ -24,13 +25,53 @@
                                    Padding="0 5 10 5"
                                    Background="{StaticResource ForegroundLightBrush}"
                                    Foreground="{StaticResource ForegroundDarkBrush}"
-                                   HorizontalAlignment="Left"
-                                   VerticalAlignment="Center"/>
+                                   HorizontalAlignment="Left"/>
                     </Grid>
                     
-                    <!--TextAndIcon-->
-                    <Border CornerRadius="8"
+                    <!--MenuItem-->
+                    <Border CornerRadius="8" 
+                            Background="Transparent"
+                            Padding="5"
                             Visibility="{Binding Type, Converter={converters:MenuItemTypeVisibilityConverter}, ConverterParameter=TextAndIcon}">
+                        
+                        <Border.Triggers>
+                            <EventTrigger RoutedEvent="Border.MouseEnter">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation Storyboard.TargetProperty="Background.Color"
+                                                        To="{StaticResource WordLightBlue}"
+                                                        Duration="0:0:0"/>
+                                        <ColorAnimation Storyboard.TargetName="icon"
+                                                        Storyboard.TargetProperty="Foreground.Color"
+                                                        To="{StaticResource ForegroundLight}"
+                                                        Duration="0:0:0"/>
+                                        <ColorAnimation Storyboard.TargetName="Text"
+                                                        Storyboard.TargetProperty="Foreground.Color"
+                                                        To="{StaticResource ForegroundLight}"
+                                                        Duration="0:0:0"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="Border.MouseLeave">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation Storyboard.TargetProperty="Background.Color"
+                                                        To="Transparent"
+                                                        Duration="0:0:0"/>
+                                        <ColorAnimation Storyboard.TargetName="icon"
+                                                        Storyboard.TargetProperty="Foreground.Color"
+                                                        To="{StaticResource ForegroundDark}"
+                                                        Duration="0:0:0"/>
+                                        <ColorAnimation Storyboard.TargetName="Text"
+                                                        Storyboard.TargetProperty="Foreground.Color"
+                                                        To="{StaticResource ForegroundVeryDark}"
+                                                        Duration="0:0:0"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Border.Triggers>
+                        
+                        <!--TextAndIcon-->
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto"/>
@@ -39,13 +80,15 @@
 
                             <!--Icon-->
                             <TextBlock Name="icon" Grid.Column="0"
-                                       Text="{StaticResource FontAwesomeChatIcon}"
+                                       Text="{Binding Icon, Converter={converters:IconTypeToFantAwesome}}"
                                        FontFamily="{StaticResource FontAwesome}"
                                        Foreground="{StaticResource ForegroundDarkBrush}"
                                        Padding="5"/>
                             <!--Text-->
                             <TextBlock Name="Text" Grid.Column="1"
                                        Text="{Binding Text}"
+                                       Foreground="{StaticResource ForegroundVeryDarkBrush}"
+                                       FontFamily="{StaticResource LatoRegular}"
                                        VerticalAlignment="Center"
                                        Margin="5 0"/>
                         </Grid>

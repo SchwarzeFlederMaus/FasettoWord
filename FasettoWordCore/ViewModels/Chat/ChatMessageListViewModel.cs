@@ -7,18 +7,18 @@ namespace FasettoWordCore.ViewModels
         public ChatMessageListViewModel()
         {
             AttachmentButtonCommand = new RelayCommand(AttachmentButton);
+            PopupClickawayCommand = new RelayCommand(PopupClickaway);
         }
         #region Properties
-        public List<ChatMessageListItemViewModel> Items { get; set; } 
-        public bool IsAttachmentButtonVisible { get; set; }
-        public ChatAttachmentPopupMenuViewModel AttachmentMenu { get; set; }
+        public List<ChatMessageListItemViewModel> Items { get; set; }
+        public bool IsAttachmentPopupVisible { get; set; }
+        public bool IsAnyPopupVisible => IsAttachmentPopupVisible;
+        public ChatAttachmentPopupMenuViewModel AttachmentMenu => new();
         public ICommand AttachmentButtonCommand { get; set; }
+        public ICommand PopupClickawayCommand { get; set; }
         #endregion
 
-        private void AttachmentButton()
-        {
-            IsAttachmentButtonVisible ^= true;
-            AttachmentMenu = new ChatAttachmentPopupMenuViewModel();
-        }
+        private void AttachmentButton() => IsAttachmentPopupVisible ^= true;
+        private void PopupClickaway() => IsAttachmentPopupVisible = false;
     }
 }

@@ -18,14 +18,14 @@
         <!-- Speech bubble rectangle -->
         <Border CornerRadius="10"
                 Margin="5 0 0 0"
-                Padding="15"
+                Padding="12"
                 Background="{Binding PopupBackground, Converter={converters:StringRGBToBrushConverter}}">
 
             <Border.Effect>
                 <DropShadowEffect BlurRadius="4" ShadowDepth="2" Color="{StaticResource WordLightBlue}"/>
             </Border.Effect>
             
-            <!-- Message text -->
+            <!-- Bubble content -->
             <ContentControl Content="{Binding Converter={converters:PopupContentConverter}}"/>
         </Border>
 
