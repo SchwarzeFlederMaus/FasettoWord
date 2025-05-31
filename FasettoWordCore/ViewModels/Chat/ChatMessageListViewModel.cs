@@ -1,4 +1,5 @@
-﻿using System.Windows.Input;
+﻿using FasettoWordCore.ViewModels.ViewModels;
+using System.Windows.Input;
 
 namespace FasettoWordCore.ViewModels
 {
@@ -8,7 +9,9 @@ namespace FasettoWordCore.ViewModels
         {
             AttachmentButtonCommand = new RelayCommand(AttachmentButton);
             PopupClickawayCommand = new RelayCommand(PopupClickaway);
+            SendCommand = new RelayCommand(Send);
         }
+
         #region Properties
         public List<ChatMessageListItemViewModel> Items { get; set; }
         public bool IsAttachmentPopupVisible { get; set; }
@@ -16,9 +19,19 @@ namespace FasettoWordCore.ViewModels
         public ChatAttachmentPopupMenuViewModel AttachmentMenu => new();
         public ICommand AttachmentButtonCommand { get; set; }
         public ICommand PopupClickawayCommand { get; set; }
+        public ICommand SendCommand { get; set; }
         #endregion
 
         private void AttachmentButton() => IsAttachmentPopupVisible ^= true;
         private void PopupClickaway() => IsAttachmentPopupVisible = false;
+        private void Send()
+        {
+            IoC.UI.ShowMessageAsync(new MessageBoxDialogViewModel
+            {
+                Title = "Send Message",
+                Message = "This is a test message",
+                OkButtonText = "OK"
+            });
+        }
     }
 }

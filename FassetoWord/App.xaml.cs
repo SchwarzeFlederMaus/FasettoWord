@@ -11,12 +11,18 @@ public partial class App : Application
     protected override void OnStartup(StartupEventArgs e)
     {
         base.OnStartup(e);
-        // Initialize the IoC container
-        IoC.Setup();
+
+        ApplicationSetup();
 
         // Show the main window
         Current.MainWindow = new MainWindow();
         Current.MainWindow.Show();
+    }
+    private void ApplicationSetup()
+    {
+        IoC.Setup();
+        
+        IoC.Kernel.Bind<IUIManager>().ToConstant(new UIManager());
     }
 }
 
