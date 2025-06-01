@@ -1,5 +1,4 @@
-﻿using FasettoWordCore.ViewModels.ViewModels;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 
 namespace FasettoWordCore.ViewModels
 {
@@ -26,7 +25,7 @@ namespace FasettoWordCore.ViewModels
         private void PopupClickaway() => IsAttachmentPopupVisible = false;
         private void Send()
         {
-            IoC.UI.ShowMessageAsync(new MessageBoxDialogViewModel
+            IoC.UI.ShowDialogAsync<MessageBoxDialogViewModel>(new()
             {
                 Title = "Send Message",
                 Message = "This is a test message",

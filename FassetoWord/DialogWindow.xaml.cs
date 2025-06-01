@@ -1,5 +1,5 @@
 ﻿using System.Windows;
-
+using FasettoWord.ViewModel;
 
 namespace FasettoWord;
 
@@ -8,9 +8,19 @@ namespace FasettoWord;
 /// </summary>
 public partial class DialogWindow : Window
 {
+    private DialogWindowViewModel _viewModel;
+    public DialogWindowViewModel ViewModel
+    {
+        get => _viewModel;
+        set
+        {
+            _viewModel = value;
+            DataContext = _viewModel;
+        }
+    }
+
     public DialogWindow()
     {
         InitializeComponent();
-        DataContext = new ViewModel.DialogWindowViewModel(this);
     }
 }

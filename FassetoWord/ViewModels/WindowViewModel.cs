@@ -5,7 +5,7 @@ using System.Windows.Input;
 
 namespace FasettoWord.ViewModel
 {
-    class WindowViewModel : BaseViewModel
+    public class WindowViewModel : BaseViewModel
     {
         private Window _window;
         private int _outerMarginSize = 10;

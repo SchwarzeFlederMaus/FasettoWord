@@ -1,9 +1,8 @@
-﻿using FasettoWordCore.ViewModels.ViewModels;
-
+﻿
 namespace FasettoWordCore
 {
     public interface IUIManager
     {
-        Task ShowMessageAsync(MessageBoxDialogViewModel viewModel);
+        Task ShowDialogAsync<T>(T viewModel) where T : BaseDialogViewModel;
     }
 }

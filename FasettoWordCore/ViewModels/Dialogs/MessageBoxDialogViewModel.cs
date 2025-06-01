@@ -1,9 +1,8 @@
-﻿namespace FasettoWordCore.ViewModels.ViewModels
+﻿namespace FasettoWordCore
 {
-    public class MessageBoxDialogViewModel : BaseViewModel
+    public class MessageBoxDialogViewModel : BaseDialogViewModel
     {
-        public string Title { get; set; }
         public string Message { get; set; }
-        public string OkButtonText { get; set; } = "OK";
+        public string OkButtonText { get; set; }
     }
 }

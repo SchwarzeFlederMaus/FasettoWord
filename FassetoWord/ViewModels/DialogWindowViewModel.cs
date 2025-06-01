@@ -3,15 +3,9 @@ using System.Windows.Controls;
 
 namespace FasettoWord.ViewModel
 {
-    class DialogWindowViewModel : WindowViewModel
+    public class DialogWindowViewModel : WindowViewModel
     {
-        public DialogWindowViewModel(Window window) : base(window) 
-        {
-            WindowMinimunWidth = 250;
-            WindowMinimunHeight = 100;
-
-            TitleHeight = 30;
-        }
+        public DialogWindowViewModel(Window window) : base(window) { }
 
         #region Properties
         public string Title { get; set; } = "Dialog Window";

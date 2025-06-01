@@ -15,7 +15,6 @@
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
         SizeToContent="WidthAndHeight"
-        Icon="/Images/Logo/logo-small.png"
         MinWidth="{Binding WindowMinimunWidth}"
         MinHeight="{Binding WindowMinimunHeight}"
         Title="{Binding Title}">
@@ -110,7 +109,7 @@
 
     <Border Background="{StaticResource ForegroundLightBrush}"
             Padding="10">
-        <TextBlock Text="Testus"/>
+        <ContentControl Content="{Binding Content}"/>
     </Border>
     
 </Window>
