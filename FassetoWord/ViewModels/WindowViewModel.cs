@@ -41,8 +41,8 @@ namespace FasettoWord.ViewModel
         #endregion
 
         #region Properties
-        public double WindowMinimunWidth => 800;
-        public double WindowMinimunHeight => 500;
+        public double WindowMinimunWidth { get; set; } = 800;
+        public double WindowMinimunHeight { get; set; } = 500;
         public bool IsBorderless => _window.WindowState == WindowState.Maximized;
         public int ResizeBorder => IsBorderless ? 0 : 6;
         public Thickness ResizeBorderThickness => new(ResizeBorder + OuterMarginSize);
@@ -60,11 +60,8 @@ namespace FasettoWord.ViewModel
             set => _windwoRadius = value;
         }
         public CornerRadius WindowCornerRadius => new(WindowRadius);
-        public int TitleHeight => 42;
+        public int TitleHeight { get; set; } = 42;
         public GridLength TitleHeightGridLength => new(TitleHeight + ResizeBorder);
-        #endregion
-
-        #region Private Helpers
         #endregion
     }
 }
