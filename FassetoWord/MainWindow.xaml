@@ -13,7 +13,8 @@
         WindowStyle="None"
         AllowsTransparency="True"
         WindowStartupLocation="CenterScreen"
-        x:Name="AppWindow"
+        Activated="Window_Activated"
+        Deactivated="Window_Deactivated"
         Icon="/Images/Logo/logo-small.png"
         MinWidth="{Binding WindowMinimunWidth}"
         MinHeight="{Binding WindowMinimunHeight}"
@@ -121,6 +122,14 @@
                 <ImageBrush TileMode="Tile" ViewportUnits="Absolute" Viewport="0 0 500 500" ImageSource="/Images/Backgrounds/emoji-background.png"/>
             </Grid.Background>
             
+            <!--Dimmed Overlay-->
+            <Border Grid.ColumnSpan="2"
+                    Panel.ZIndex="5"
+                    Opacity="0.3">
+                <Border Background="{StaticResource ForegroundVeryDarkBrush}"
+                        attachedProperties:AnimateFadeInProperty.Value="{Binding DimmableOverlayVisible}"/>
+            </Border>
+
             <!--SideMenu-->
             <controls:SideMenuControl Grid.Column="0" Width="300" 
                 attachedProperties:AnimateSlideInFromLeftProperty.Value="{Binding ApplicationViewModel.IsSideMenuVisible ,Source={x:Static local:ViewModelLocator.Instance}}">

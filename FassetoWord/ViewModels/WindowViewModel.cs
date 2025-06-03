@@ -62,6 +62,7 @@ namespace FasettoWord.ViewModel
         public CornerRadius WindowCornerRadius => new(WindowRadius);
         public int TitleHeight { get; set; } = 42;
         public GridLength TitleHeightGridLength => new(TitleHeight + ResizeBorder);
+        public bool DimmableOverlayVisible { get; set; }
         #endregion
     }
 }

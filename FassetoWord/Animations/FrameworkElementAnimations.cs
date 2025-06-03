@@ -78,5 +78,26 @@ namespace FasettoWord.Animations
             await Task.Delay(TimeSpan.FromSeconds(seconds));
         }
         #endregion
+
+        #region Fade in/out
+        public static async Task FadeInAsync(this FrameworkElement element, double seconds = 0.3f)
+        {
+            var sb = new Storyboard();
+            sb.AddFadeIn(seconds);
+            sb.Begin(element);
+            element.Visibility = Visibility.Visible;
+            await Task.Delay(TimeSpan.FromSeconds(seconds));
+        }
+        public static async Task FadeOutAsync(this FrameworkElement element, double seconds = 0.3f)
+        {
+            var sb = new Storyboard();
+            sb.AddFadeOut(seconds);
+            sb.Begin(element);
+            element.Visibility = Visibility.Visible;
+            await Task.Delay(TimeSpan.FromSeconds(seconds));
+
+            element.Visibility = Visibility.Collapsed;
+        }
+        #endregion
     }
 }

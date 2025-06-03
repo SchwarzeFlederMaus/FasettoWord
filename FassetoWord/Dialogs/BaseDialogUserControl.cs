@@ -1,7 +1,9 @@
 ﻿using FasettoWord.ViewModel;
 using FasettoWordCore;
+using FasettoWordCore.ViewModels;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace FasettoWord
 {
@@ -14,6 +16,8 @@ namespace FasettoWord
             _dialogWindow = new DialogWindow();
             _dialogWindow.ViewModel = new DialogWindowViewModel(_dialogWindow);
         }
+
+        public ICommand CloseCommand => new RelayCommand(_dialogWindow.Close);
 
         public int WindowMinimunWidth { get; set; } = 250;
         public int WindowMinimunHeight { get; set; } = 100;

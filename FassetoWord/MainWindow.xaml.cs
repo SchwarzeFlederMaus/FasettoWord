@@ -1,4 +1,4 @@
-﻿using FasettoWordCore.ViewModels;
+﻿using FasettoWord.ViewModel;
 using System.Windows;
 
 
@@ -12,6 +12,16 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
-        DataContext = new ViewModel.WindowViewModel(this);
+        DataContext = new WindowViewModel(this);
+    }
+
+    private void Window_Activated(object sender, EventArgs e)
+    {
+        (DataContext as WindowViewModel).DimmableOverlayVisible = false;
+    }
+
+    private void Window_Deactivated(object sender, EventArgs e)
+    {
+        (DataContext as WindowViewModel).DimmableOverlayVisible = true;
     }
 }

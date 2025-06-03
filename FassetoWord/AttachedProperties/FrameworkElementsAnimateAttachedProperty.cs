@@ -93,4 +93,27 @@ namespace FasettoWord.AttachedProperties
             //}
         }
     }
+
+    /// <summary>
+    /// Animates a freamework element to fading in on show
+    /// and fading out to hide
+    /// </summary>
+    public class AnimateFadeInProperty : AnimateBaseProperty<AnimateFadeInProperty>
+    {
+        protected override async void DoAnimation(FrameworkElement element, bool value)
+        {
+            var seconds = FirstLoad ? 0 : 0.3f;
+            if (value) await element.FadeInAsync(seconds);
+            else await element.FadeOutAsync(seconds);
+
+            //Infinite loop to keep the animation going
+            //while (true)
+            //{
+            //    await Task.Delay(TimeSpan.FromSeconds(2));
+            //    await element.FadeInAsync(1);
+            //    await Task.Delay(TimeSpan.FromSeconds(2));
+            //    await element.FadeOutAsync(1);
+            //}
+        }
+    }
 }
