@@ -1,10 +1,9 @@
-﻿using FasettoWord.Animations;
-using FasettoWordCore.ViewModels;
+﻿using FasettoWordCore.ViewModels;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace FasettoWord.Pages
+namespace FasettoWord
 {
     public class BasePage : UserControl
     {

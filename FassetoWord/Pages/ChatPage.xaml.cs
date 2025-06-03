@@ -1,6 +1,6 @@
 ﻿using FasettoWordCore.ViewModels;
 
-namespace FasettoWord.Pages
+namespace FasettoWord
 {   
     public partial class ChatPage : BasePage<ChatMessageListViewModel>
     {

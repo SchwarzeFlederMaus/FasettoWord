@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace FasettoWord.AttachedProperties
+namespace FasettoWord
 {
     /// <summary>
     /// Base class for all attached properties to replace the vanilla WPF attached property

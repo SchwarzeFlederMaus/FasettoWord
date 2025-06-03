@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Input;
 
-namespace FasettoWord.AttachedProperties
+namespace FasettoWord
 {
     public class IsFocusedProperty: BaseAttachedProperty<IsFocusedProperty, bool>
     {

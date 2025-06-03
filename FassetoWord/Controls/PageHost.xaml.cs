@@ -1,5 +1,4 @@
-﻿using FasettoWord.Pages;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 
 namespace FasettoWord.Controls

@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 
-namespace FasettoWord.AttachedProperties
+namespace FasettoWord
 {
     public class NoFrameHistory: BaseAttachedProperty<NoFrameHistory, bool>
     {

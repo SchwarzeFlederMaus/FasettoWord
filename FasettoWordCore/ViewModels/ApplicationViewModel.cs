@@ -10,7 +10,7 @@ namespace FasettoWordCore.ViewModels
 
         public ApplicationPage CurrentPage { get; private set; } = ApplicationPage.Chat;
 
-        public bool IsSideMenuVisible { get; set; } = true;
+        public bool IsSideMenuVisible { get; set; }
 
         public void GoToPage(ApplicationPage page)
         {

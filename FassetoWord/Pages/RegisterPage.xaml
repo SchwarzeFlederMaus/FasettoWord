@@ -1,10 +1,9 @@
-﻿<local:BasePage x:TypeArguments="viewModel:RegisterViewModel" x:Class="FasettoWord.Pages.RegisterPage"
+﻿<local:BasePage x:TypeArguments="viewModel:RegisterViewModel" x:Class="FasettoWord.RegisterPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-      xmlns:attachedProperties="clr-namespace:FasettoWord.AttachedProperties"
-      xmlns:local="clr-namespace:FasettoWord.Pages"
+      xmlns:local="clr-namespace:FasettoWord"
       xmlns:viewModel="clr-namespace:FasettoWordCore.ViewModels;assembly=FasettoWordCore"
       d:DataContext="{d:DesignInstance Type=viewModel:RegisterViewModel}"
       mc:Ignorable="d" 
@@ -27,11 +26,11 @@
 
                     <StackPanel>
                         <TextBlock Text="Sign Up"
-                                   attachedProperties:IsBusyProperty.Value="{Binding IsRegisterRunning}"
+                                   local:IsBusyProperty.Value="{Binding IsRegisterRunning}"
                                    FontSize="{StaticResource FontSizeXXLarge}"
                                    FontFamily="{StaticResource LatoRegular}"
                                    Foreground="{StaticResource WordBlueBrush}"
-                                   attachedProperties:IsFocusedProperty.Value="True"/>
+                                   local:IsFocusedProperty.Value="True"/>
                         <TextBlock Text="It's about to get fun" 
                                    FontSize="{StaticResource FontSizeLarge}"
                                    Foreground="{StaticResource ForegroundDarkBrush}"
@@ -43,7 +42,7 @@
                         <!-- Register Button -->
                         <Button Content="Register"
                                 IsDefault="True"
-                                attachedProperties:IsBusyProperty.Value="{Binding IsRegisterRunning}"
+                                local:IsBusyProperty.Value="{Binding IsRegisterRunning}"
                                 Command="{Binding RegisterCommand}"
                                 CommandParameter="{Binding ElementName=Page}" 
                                 FontFamily="{StaticResource LatoBold}" 

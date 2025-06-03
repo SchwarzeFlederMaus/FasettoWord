@@ -1,7 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:FasettoWord"
-                    xmlns:attachedProperty="clr-namespace:FasettoWord.AttachedProperties"
                     xmlns:converters="clr-namespace:FasettoWord.Converters">
 
     <ResourceDictionary.MergedDictionaries>
@@ -86,7 +85,7 @@
         <Setter Property="FontFamily" Value="{StaticResource LatoRegular}"/>
         <Setter Property="Padding" Value="50 10"/>
         <Setter Property="Margin" Value="0 10"/>
-        <Setter Property="attachedProperty:IsBusyProperty.Value" Value="False"/>
+        <Setter Property="local:IsBusyProperty.Value" Value="False"/>
 
         <Setter Property="Template">
             <Setter.Value>
@@ -99,7 +98,7 @@
                             SnapsToDevicePixels="True">
                         <Grid>
                             <TextBlock Text="{TemplateBinding Content}" 
-                                       Visibility="{TemplateBinding attachedProperty:IsBusyProperty.Value, Converter={converters:BooleanToVisibilityConverter}, ConverterParameter=True}"
+                                       Visibility="{TemplateBinding local:IsBusyProperty.Value, Converter={converters:BooleanToVisibilityConverter}, ConverterParameter=True}"
                                        Focusable="False"
                                        FontFamily="{TemplateBinding FontFamily}"
                                        FontSize="{TemplateBinding FontSize}"
@@ -111,7 +110,7 @@
                                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                        FontSize="{TemplateBinding FontSize}"
                                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                       Visibility="{TemplateBinding attachedProperty:IsBusyProperty.Value, Converter={converters:BooleanToVisibilityConverter}}"/>
+                                       Visibility="{TemplateBinding local:IsBusyProperty.Value, Converter={converters:BooleanToVisibilityConverter}}"/>
                         </Grid>
                     </Border>
                     <ControlTemplate.Triggers>

@@ -1,7 +1,6 @@
-﻿using FasettoWord.Animations;
-using System.Windows;
+﻿using System.Windows;
 
-namespace FasettoWord.AttachedProperties
+namespace FasettoWord
 {
     /// <summary>
     /// A base class to run any animation method when a boolean is set to true

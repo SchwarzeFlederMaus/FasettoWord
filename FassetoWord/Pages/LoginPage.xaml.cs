@@ -1,7 +1,7 @@
 ﻿using FasettoWordCore.ViewModels;
 using System.Security;
 
-namespace FasettoWord.Pages
+namespace FasettoWord
 {
     /// <summary>
     /// Interaction logic for LoginPage.xaml

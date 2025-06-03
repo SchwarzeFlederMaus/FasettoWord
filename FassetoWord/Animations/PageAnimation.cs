@@ -1,5 +1,5 @@
 ﻿
-namespace FasettoWord.Animations
+namespace FasettoWord
 {
     public enum PageAnimation
     {

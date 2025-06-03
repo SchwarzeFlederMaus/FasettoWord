@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 
-namespace FasettoWord.AttachedProperties
+namespace FasettoWord
 {
     /// <summary>
     /// The MonitorPassword attached property for the <see cref="PasswordBox"/>
