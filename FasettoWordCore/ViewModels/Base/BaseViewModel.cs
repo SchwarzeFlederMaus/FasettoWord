@@ -3,7 +3,7 @@ using PropertyChanged;
 using System.ComponentModel;
 using System.Linq.Expressions;
 
-namespace FasettoWordCore.ViewModels
+namespace FasettoWordCore
 {
     [AddINotifyPropertyChangedInterface]
     public class BaseViewModel : INotifyPropertyChanged

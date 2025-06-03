@@ -1,6 +1,5 @@
 ﻿
-
-namespace FasettoWordCore.ViewModels
+namespace FasettoWordCore
 {
     public class MenuViewModel : BaseViewModel
     {

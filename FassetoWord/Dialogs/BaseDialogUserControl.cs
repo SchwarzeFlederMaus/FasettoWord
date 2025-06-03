@@ -1,6 +1,4 @@
-﻿using FasettoWord.ViewModel;
-using FasettoWordCore;
-using FasettoWordCore.ViewModels;
+﻿using FasettoWordCore;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;

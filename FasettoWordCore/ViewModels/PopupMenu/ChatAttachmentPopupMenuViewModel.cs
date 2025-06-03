@@ -1,6 +1,6 @@
 ﻿using FasettoWordCore.DataModels;
 
-namespace FasettoWordCore.ViewModels
+namespace FasettoWordCore
 {
     public class ChatAttachmentPopupMenuViewModel : BasePopupViewModel
     {

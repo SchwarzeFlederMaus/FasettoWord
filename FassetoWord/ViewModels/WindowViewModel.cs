@@ -1,9 +1,8 @@
-﻿using FasettoWordCore.DataModels;
-using FasettoWordCore.ViewModels;
+﻿using FasettoWordCore;
 using System.Windows;
 using System.Windows.Input;
 
-namespace FasettoWord.ViewModel
+namespace FasettoWord
 {
     public class WindowViewModel : BaseViewModel
     {

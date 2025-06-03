@@ -1,4 +1,4 @@
-﻿using FasettoWordCore.ViewModels;
+﻿using FasettoWordCore;
 using System.Security;
 
 namespace FasettoWord

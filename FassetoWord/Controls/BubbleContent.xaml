@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:converters="clr-namespace:FasettoWord.Converters"
              xmlns:local="clr-namespace:FasettoWord.Controls"
-             xmlns:designModel="clr-namespace:FasettoWordCore.ViewModels;assembly=FasettoWordCore"
+             xmlns:designModel="clr-namespace:FasettoWordCore;assembly=FasettoWordCore"
              d:DataContext="{x:Static designModel:ChatAttachmentPopupMenuDesignModel.Instance}"
              mc:Ignorable="d">
 

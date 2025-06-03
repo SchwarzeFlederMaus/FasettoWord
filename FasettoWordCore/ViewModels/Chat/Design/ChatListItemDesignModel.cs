@@ -1,4 +1,4 @@
-﻿namespace FasettoWordCore.ViewModels
+﻿namespace FasettoWordCore
 {
     public class ChatListItemDesignModel : ChatListItemViewModel
     {

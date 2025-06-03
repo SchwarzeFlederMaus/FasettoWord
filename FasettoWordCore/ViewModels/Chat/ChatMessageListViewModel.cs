@@ -1,6 +1,6 @@
 ﻿using System.Windows.Input;
 
-namespace FasettoWordCore.ViewModels
+namespace FasettoWordCore
 {
     public class ChatMessageListViewModel : BaseViewModel
     {

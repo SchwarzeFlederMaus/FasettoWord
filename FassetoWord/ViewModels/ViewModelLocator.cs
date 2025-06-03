@@ -1,5 +1,4 @@
 ﻿using FasettoWordCore;
-using FasettoWordCore.ViewModels;
 
 namespace FasettoWord
 {

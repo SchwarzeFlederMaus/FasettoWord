@@ -1,7 +1,6 @@
 ﻿using System.Diagnostics;
 using System.Globalization;
 using FasettoWordCore;
-using FasettoWordCore.ViewModels;
 
 namespace FasettoWord.Converters
 {

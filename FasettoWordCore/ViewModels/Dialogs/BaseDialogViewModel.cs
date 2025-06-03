@@ -1,6 +1,4 @@
-﻿using FasettoWordCore.ViewModels;
-
-namespace FasettoWordCore
+﻿namespace FasettoWordCore
 {
     public class BaseDialogViewModel : BaseViewModel
     {

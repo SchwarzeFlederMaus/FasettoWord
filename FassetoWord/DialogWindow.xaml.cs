@@ -1,5 +1,4 @@
 ﻿using System.Windows;
-using FasettoWord.ViewModel;
 
 namespace FasettoWord;
 

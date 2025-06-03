@@ -1,4 +1,4 @@
-﻿using FasettoWordCore.ViewModels;
+﻿using FasettoWordCore;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;

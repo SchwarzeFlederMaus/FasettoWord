@@ -1,9 +1,8 @@
 ﻿using FasettoWordCore.DataModels;
-using FasettoWordCore.Security;
 using System.Security;
 using System.Windows.Input;
 
-namespace FasettoWordCore.ViewModels
+namespace FasettoWordCore
 {
     public class LoginViewModel : BaseViewModel
     {

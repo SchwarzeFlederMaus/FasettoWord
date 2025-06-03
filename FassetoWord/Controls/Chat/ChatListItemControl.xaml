@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:converters="clr-namespace:FasettoWord.Converters"
              xmlns:local="clr-namespace:FasettoWord.Controls"
-             xmlns:viewModel="clr-namespace:FasettoWordCore.ViewModels;assembly=FasettoWordCore"
+             xmlns:core="clr-namespace:FasettoWordCore;assembly=FasettoWordCore"
              mc:Ignorable="d"
              d:DesignWidth="300">
     <UserControl.Resources>
@@ -90,7 +90,7 @@
         </Style>
     </UserControl.Resources>
 
-    <ContentControl d:DataContext="{x:Static viewModel:ChatListItemDesignModel.Instance}"
+    <ContentControl d:DataContext="{x:Static core:ChatListItemDesignModel.Instance}"
                     Style="{StaticResource ContentStyle}">
     </ContentControl>
 </UserControl>

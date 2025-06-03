@@ -1,5 +1,4 @@
-﻿using FasettoWordCore.ViewModels;
-using Ninject;
+﻿using Ninject;
 
 namespace FasettoWordCore
 {

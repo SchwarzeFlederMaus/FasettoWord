@@ -5,10 +5,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:converters="clr-namespace:FasettoWord.Converters"
              xmlns:local="clr-namespace:FasettoWord.Controls"
-             xmlns:viewModel="clr-namespace:FasettoWordCore.ViewModels;assembly=FasettoWordCore"
+             xmlns:core="clr-namespace:FasettoWordCore;assembly=FasettoWordCore"
              mc:Ignorable="d">
     
-    <ItemsControl d:DataContext="{x:Static viewModel:MenuDesignModel.Instance}"
+    <ItemsControl d:DataContext="{x:Static core:MenuDesignModel.Instance}"
                   ItemsSource="{Binding Items}"
                   Background="{StaticResource ForegroundLightBrush}">
         <ItemsControl.ItemTemplate>

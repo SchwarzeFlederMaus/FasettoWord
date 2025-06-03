@@ -1,4 +1,4 @@
-﻿<local:BasePage x:TypeArguments="viewModel:ChatMessageListViewModel" x:Class="FasettoWord.ChatPage"
+﻿<local:BasePage x:TypeArguments="core:ChatMessageListViewModel" x:Class="FasettoWord.ChatPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,8 +6,8 @@
       xmlns:controls="clr-namespace:FasettoWord.Controls"
       xmlns:converters="clr-namespace:FasettoWord.Converters"
       xmlns:local="clr-namespace:FasettoWord"
-      xmlns:viewModel="clr-namespace:FasettoWordCore.ViewModels;assembly=FasettoWordCore"
-      d:DataContext="{d:DesignInstance Type=viewModel:ChatMessageListDesignModel}"
+      xmlns:core="clr-namespace:FasettoWordCore;assembly=FasettoWordCore"
+      d:DataContext="{d:DesignInstance Type=core:ChatMessageListDesignModel}"
       mc:Ignorable="d"
       d:DesignWidth="500"
       x:Name="Page">

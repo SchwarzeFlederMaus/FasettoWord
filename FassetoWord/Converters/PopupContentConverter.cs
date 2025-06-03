@@ -1,5 +1,5 @@
 ﻿using FasettoWord.Controls;
-using FasettoWordCore.ViewModels;
+using FasettoWordCore;
 using System.Globalization;
 
 namespace FasettoWord.Converters
