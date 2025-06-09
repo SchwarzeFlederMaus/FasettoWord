@@ -31,8 +31,10 @@
                         </StackPanel>
 
                         <!--Settings Button-->
+                        <!--TODO: NEED TO DELETE CLICK EVENT-->
                         <Button Grid.Column="2" Foreground="{StaticResource WordDarkBlueBrush}"
-                                Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeConfigIcon}"/>
+                                Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeConfigIcon}"
+                                Click="Button_Click"/>
                     </Grid>
 
                     <ContentPresenter Grid.Row="1"/>

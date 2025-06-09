@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FasettoWordCore;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace FasettoWord.Controls
 {
@@ -23,6 +12,11 @@ namespace FasettoWord.Controls
         public SideMenuControl()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            Application.LoadComponent(Application.Current.MainWindow, new System.Uri("/FasettoWord;component/Controls/SettingsControl.xaml", System.UriKind.Relative));
         }
     }
 }
