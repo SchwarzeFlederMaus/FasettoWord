@@ -1,4 +1,4 @@
-﻿using FasettoWordCore.DataModels;
+﻿using FasettoWordCore;
 using System.Globalization;
 using System.Windows;
 

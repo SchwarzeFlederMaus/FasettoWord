@@ -1,5 +1,4 @@
-﻿using FasettoWordCore.Expressions;
-using PropertyChanged;
+﻿using PropertyChanged;
 using System.ComponentModel;
 using System.Linq.Expressions;
 

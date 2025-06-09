@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 
-namespace FasettoWordCore.Expressions
+namespace FasettoWordCore
 {
     public static class ExpressionHelpers
     {

@@ -1,4 +1,4 @@
-﻿namespace FasettoWordCore.DataModels
+﻿namespace FasettoWordCore
 {
     public enum ApplicationPage
     {

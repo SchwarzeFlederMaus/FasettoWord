@@ -1,7 +1,7 @@
 ﻿using System.Runtime.InteropServices;
 using System.Security;
 
-namespace FasettoWordCore.Security
+namespace FasettoWordCore
 {
     /// <summary>
     /// Helper class for <see cref="SecureString"/> class

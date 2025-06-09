@@ -1,5 +1,4 @@
-﻿using FasettoWordCore.DataModels;
-using System.Security;
+﻿using System.Security;
 using System.Windows.Input;
 
 namespace FasettoWordCore
