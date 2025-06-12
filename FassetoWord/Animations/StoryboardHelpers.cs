@@ -40,7 +40,7 @@ namespace FasettoWord
             var animation = new ThicknessAnimation
             {
                 Duration = new Duration(TimeSpan.FromSeconds(seconds)),
-                From = new Thickness(offset, 0, 0, 0),
+                From = new Thickness(0, 0, -offset, 0),
                 To = new Thickness(0),
                 DecelerationRatio = decelerationRatio,
             };
@@ -54,7 +54,7 @@ namespace FasettoWord
             {
                 Duration = new Duration(TimeSpan.FromSeconds(seconds)),
                 From = new Thickness(0),
-                To = new Thickness(offset, 0, 0, 0),
+                To = new Thickness(0, 0, -offset, 0),
                 DecelerationRatio = decelerationRatio,
             };
 
@@ -68,7 +68,7 @@ namespace FasettoWord
             var animation = new ThicknessAnimation
             {
                 Duration = new Duration(TimeSpan.FromSeconds(seconds)),
-                From = new Thickness(0, 0, 0, -offset),
+                From = new Thickness(0, offset, 0, -offset),
                 To = new Thickness(0),
                 DecelerationRatio = decelerationRatio,
             };
@@ -82,7 +82,7 @@ namespace FasettoWord
             {
                 Duration = new Duration(TimeSpan.FromSeconds(seconds)),
                 From = new Thickness(0),
-                To = new Thickness(0, 0, 0, -offset),
+                To = new Thickness(0, offset, 0, -offset),
                 DecelerationRatio = decelerationRatio,
             };
 

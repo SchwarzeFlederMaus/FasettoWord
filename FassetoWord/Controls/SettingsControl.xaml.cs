@@ -1,17 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using FasettoWordCore;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace FasettoWord.Controls
 {
@@ -23,6 +11,10 @@ namespace FasettoWord.Controls
         public SettingsControl()
         {
             InitializeComponent();
+
+            // Set the DataContext to the SettingsViewModel from IoC
+            // TODO: This should be done in the ViewModelLocator or similar, not directly in the view
+            DataContext = IoC.Settings;
         }
     }
 }

@@ -127,9 +127,13 @@
                 <Border Background="{StaticResource ForegroundVeryDarkBrush}"
                         local:AnimateFadeInProperty.Value="{Binding DimmableOverlayVisible}"/>
             </Border>
+            
+            <!--Seetings-->
+            <controls:SettingsControl Grid.ColumnSpan="2" Panel.ZIndex="6"
+                                      local:AnimateSlideInFromBottomProperty.Value="{Binding ApplicationViewModel.IsSettingsMenuVisible, Source={x:Static local:ViewModelLocator.Instance}}"/>
 
             <!--SideMenu-->
-            <controls:SideMenuControl Grid.Column="0" Width="300" 
+            <controls:SideMenuControl Grid.Column="0" Width="300"
                 local:AnimateSlideInFromLeftProperty.Value="{Binding ApplicationViewModel.IsSideMenuVisible ,Source={x:Static local:ViewModelLocator.Instance}}">
                 <controls:ChatListControl/>
             </controls:SideMenuControl>

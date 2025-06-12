@@ -33,13 +33,13 @@ namespace FasettoWordCore
                 //var pass = ((IHavePassword)parameter).SecurePassword.Unsecure();
 
                 //Go to the chat page
-                IoC.Get<ApplicationViewModel>().GoToPage(ApplicationPage.Chat);
+                IoC.Application.GoToPage(ApplicationPage.Chat);
             });
 
         }
         private async Task RegisterAsync()
         {
-            IoC.Get<ApplicationViewModel>().GoToPage(ApplicationPage.Register);
+            IoC.Application.GoToPage(ApplicationPage.Register);
             await Task.Delay(1);
         }
     }

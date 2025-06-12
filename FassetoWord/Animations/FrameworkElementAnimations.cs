@@ -25,8 +25,9 @@ namespace FasettoWord
             sb.AddSlideToLeft(seconds, offset);
             sb.AddFadeOut(seconds);
             sb.Begin(element);
-            element.Visibility = Visibility.Visible;
             await Task.Delay(TimeSpan.FromSeconds(seconds));
+
+            element.Visibility = Visibility.Hidden;
         }
         #endregion
         #region Slide Right
@@ -49,8 +50,9 @@ namespace FasettoWord
             sb.AddSlideToRight(seconds, offset);
             sb.AddFadeOut(seconds);
             sb.Begin(element);
-            element.Visibility = Visibility.Visible;
             await Task.Delay(TimeSpan.FromSeconds(seconds));
+
+            element.Visibility = Visibility.Hidden;
         }
         #endregion
         #region Slide Bottom
@@ -73,8 +75,9 @@ namespace FasettoWord
             sb.AddSlideToBottom(seconds, offset);
             sb.AddFadeOut(seconds);
             sb.Begin(element);
-            element.Visibility = Visibility.Visible;
             await Task.Delay(TimeSpan.FromSeconds(seconds));
+
+            element.Visibility = Visibility.Hidden;
         }
         #endregion
 

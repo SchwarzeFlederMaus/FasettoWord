@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:FasettoWord.Controls"
+             xmlns:main="clr-namespace:FasettoWord"
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="300">
     <UserControl.Template>
@@ -31,10 +32,9 @@
                         </StackPanel>
 
                         <!--Settings Button-->
-                        <!--TODO: NEED TO DELETE CLICK EVENT-->
                         <Button Grid.Column="2" Foreground="{StaticResource WordDarkBlueBrush}"
                                 Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeConfigIcon}"
-                                Click="Button_Click"/>
+                                Command="{Binding SettingsViewModel.OpenCommand, Source={x:Static main:ViewModelLocator.Instance}}"/>
                     </Grid>
 
                     <ContentPresenter Grid.Row="1"/>

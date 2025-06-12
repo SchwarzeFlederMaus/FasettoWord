@@ -10,7 +10,7 @@ namespace FasettoWord.Converters
         {
             switch ((string)parameter)
             {
-                case nameof(ApplicationViewModel): return IoC.Get<ApplicationViewModel>();
+                case nameof(ApplicationViewModel): return IoC.Application;
                 default: Debugger.Break(); return null;  
             }
         }

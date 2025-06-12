@@ -62,6 +62,11 @@ namespace FasettoWord
         public int TitleHeight { get; set; } = 42;
         public GridLength TitleHeightGridLength => new(TitleHeight + ResizeBorder);
         public bool DimmableOverlayVisible { get; set; }
+        public bool SettingsMenuVisible
+        {
+            get => IoC.Application.IsSettingsMenuVisible;
+            set => IoC.Application.IsSettingsMenuVisible = value;
+        }
         #endregion
-    }
+     }   
 }

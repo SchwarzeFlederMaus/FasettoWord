@@ -59,7 +59,7 @@ namespace FasettoWord
             if (value) await element.SlideAndFadeInFromLeftAsync(seconds);
             else await element.SlideAndFadeOutToLeftAsync(seconds);
 
-            //Infinite loop to keep the animation going
+            ////Infinite loop to keep the animation going
             //while (true)
             //{
             //    await Task.Delay(TimeSpan.FromSeconds(2));
@@ -82,7 +82,7 @@ namespace FasettoWord
             if (value) await element.SlideAndFadeInFromBottomAsync(seconds);
             else await element.SlideAndFadeOutToBottomAsync(seconds);
 
-            //Infinite loop to keep the animation going
+            ////Infinite loop to keep the animation going
             //while (true)
             //{
             //    await Task.Delay(TimeSpan.FromSeconds(2));
@@ -105,7 +105,7 @@ namespace FasettoWord
             if (value) await element.FadeInAsync(seconds);
             else await element.FadeOutAsync(seconds);
 
-            //Infinite loop to keep the animation going
+            ////Infinite loop to keep the animation going
             //while (true)
             //{
             //    await Task.Delay(TimeSpan.FromSeconds(2));
