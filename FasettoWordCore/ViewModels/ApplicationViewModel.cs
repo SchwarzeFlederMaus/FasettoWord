@@ -4,9 +4,9 @@
     {
 
         //TODO: Need to change this to a login page 
-        public ApplicationPage CurrentPage { get; private set; } = ApplicationPage.Login;
+        public ApplicationPage CurrentPage { get; private set; } = ApplicationPage.Chat;
         //TODO: Need to delete default value
-        public bool IsSideMenuVisible { get; set; } = false;
+        public bool IsSideMenuVisible { get; set; } = true;
         public bool IsSettingsMenuVisible { get; set; }
 
         public void GoToPage(ApplicationPage page)

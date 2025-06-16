@@ -33,6 +33,7 @@
     <None Remove="Images\Logo\icon.ico" />
     <None Remove="Images\Logo\logo-small.png" />
     <None Remove="Images\Logo\logo.png" />
+    <None Remove="Images\Samples\Rata.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -111,6 +112,9 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\Logo\logo.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Samples\Rata.jpg">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
